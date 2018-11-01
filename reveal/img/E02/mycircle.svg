@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <title>my circle</title>
+  <g>
+    <ellipse cx="200" cy="200" rx="100" ry="100" fill="blue" stroke="darkgreen" stroke-width="10" />
+  </g>
+</svg>
