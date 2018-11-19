@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <!-- CUSTOMIZE THIS! -->
-<title>DH_E03-Programmieren</title>
+<title>Einführung in die Digital Humanities</title>
 <meta name="author" content="Christof Schöch">
 <!-- END -->
 <meta name="description" content="Slides">
@@ -31,100 +31,67 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <body>
 <div class="reveal">
 <div class="slides">
-<section data-markdown="" data-separator="^\n--\n" data-separator-vertical="^\n---\n" data-charset="utf-8" data-background-image="img/basics/uni-trier-mini.png" data-background-size="50px" data-background-position="top right">
+<section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8" data-background-image="img/basics/uni-trier.png" data-background-size="300px" data-background-position="top 10px right 10px">
 <script type="text/template">
-
 <br/>
-## Programmieren<br/>
-<hr/>
-<br/>
-<br/>Vorlesung *Einführung in die Digital Humanities*
-<br/>MSc Digital Humanities | Wintersemester 2018/19
-<br/>
-<br/>Prof. Dr. Christof Schöch
-<br/>
+## Grundbegriffe des Programmierens<br/>
 <br/>
 <hr/>
-<br/><img height="50" data-src="img/basics/uni-trier.png">
+<br/>
+Vorlesung *Einführung in die Digital Humanities*
+<br/>
+<br/>
+<br/>
+Prof. Dr. Christof Schöch
+<br/>
+Wintersemester 2017/18
+<br/>
+<hr/>
+<br/>
+<img height="50" data-src="img/basics/uni-trier.png"></img>
 
---
+---
 # Einstieg
 
 
----
-## Dies Academicus
-<br/>
-* 15.11., ab 15 Uhr
-* Audimax
-* https://www.uni-trier.de/index.php?id=46292
-
----
-## Gastvortrag 
-<br/>
-* Dr. Monica Berti (Leipzig): "Digital Editions of Historical Text Re-Use"
-* Im Rahmen des Seminars Praxis der Digital Humanities
-* Donnerstag, 16-18 Uhr, DM 131
-
-
----
-## Gastvortrag + Workshop
-<br/>
-* Prof. Miguel Escobar Varela (National University of Singapore):
-* Vortrag: 
-    * "Digital Humanities for Theatre Research" 
-    * Mi, 21.11. 16-18 Uhr, A 11
-* Workshop 
-    * "Developing interactive network analysis portals with Gephi and D3js"
-    * Do, 22.11. 14-18 Uhr, DM 131
-
-
----
-## Job (Werkvertrag)
-<br/>
-* Auftraggeber: EADH / Schöch
-* Aufgabe: Anzeige von bibliographischen Daten auf Webseiten
-* Kenntnisse: HTML, Bibtex, CMS, ggfs. APIs
-* Frist: Januar 2019
-* Aufwand: ca. 40-50 Stunden
-
-
----
+--
 ## Semesterüberblick
 
 <small>
 
-* 23.10.: Digital Humanities im Überblick
-* 30.10.: Digitalisierung: Text und Bild
-* **06.11.: Grundbegriffe des Programmierens**
-* 13.11.: Datenmodellierung 1: Modellierung
-* 20.11.: Datenmodellierung 2: Datenbanken
-* 27.11.: Datenmodellierung 3: Text, Markup, XML
-* 04.12.: Digitale Edition
-* 11.12.: Geschichte der Digital Humanities
-* 18.12.: Informationsvisualisierung
-* 22.12.-6.1.: *Weihnachtspause*
-* 08.01.: Natural Language Processing
-* 15.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
-* 22.01.: Quantitative Analyse 2: Superv. Machine Learning
-* 29.01.: Open Humanities
-* 05.02.: Klausurtermin
-
+* 19.10.: Einführungssitzung
+* 26.10.: Digital Humanities im Überblick
+* 02.11.: Digitalisierung: Text und Bild
+* **09.11.: Einstieg ins Programmieren**
+* 16.11.: *Sitzung fällt vorr. aus*
+* 23.11.: Datenmodellierung 1: Modellierung
+* 30.11.: Datenmodellierung 2: Datenbanken
+* 07.12.: Datenmodellierung 3: Text, Markup, XML
+* 14.12.: Digitale Edition
+* 21.12.: Geschichte der DH
+* 23.12.-7.1.: *Weihnachtspause*
+* 11.01.: Natural Language Processing
+* 18.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
+* 25.01.: Quantitative Analyse 2: Superv. Machine Learning
+* 01.02.: Open Humanities / Visualisierung
+* 08.02.: Klausurtermin
 
 </small>
 
----
+--
 ## Sitzungsüberblick
 <br/>
 1. Einstieg: Programmiersprachen
 2. Grundbegriffe: Variablen, Datentypen, Operatoren
 3. Grundbegriffe: Datenstrukturen, Funktionen und Methoden
 3. Programmstrukturen: Schleifen, Bedingungen, Verzweigungen
-4. Bausteine eines Programms + Beispiel
+4. Bausteine eines Programms
+5. Beispiel: Anzahl der Worte in einem Satz
 6. "Think like a programmer" -- aber wie?
 
 
 
---
+---
 # 1. Einstieg: Programmiersprachen
 
 --
@@ -135,7 +102,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
     * "kompilierte" Sprachen wie Pascal, C++
     * "interpretierte" Sprachen wie PHP, Perl oder Python
 
----
+--
 ## Beispiel-Sprache: Python
 <br/>
 * Eine Skript-Sprache
@@ -146,21 +113,21 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
     * "Integrated Development Environments"
     * Beispiele: Thonny, Geany, Spyder, PyCharm, etc.
 
----
+--
 ## Thonny
-<img height="500" data-src="img/E04/thonny.png"></img>
+<img height="500" data-src="img/E03/thonny.png"></img>
 <br/>http://thonny.org/
 
---
+---
 # 2. Grundbegriffe
 
----
+--
 ## Algorithmus
 <br/>
 * Folge von Anweisungen, um ein bestimmtes Ziel zu erreichen <!-- .element: class="fragment" data-fragment-index="1" -->
 * (ähnlich: Kochrezept) <!-- .element: class="fragment" data-fragment-index="1" -->
 
----
+--
 ## Variablen
 <br/>
 <pre>
@@ -177,7 +144,7 @@ busnummer = 10 + 3
 * Struktur: "Variable = Ausdruck"
 * alles zusammen ist eine "Anweisung"
 
----
+--
 ## Umgang mit Variablen
 <br/>
 <pre>
@@ -191,7 +158,7 @@ print(preis)
 </code>
 </pre>
 
----
+--
 ## Datentypen
 <br/>
 * "Zusammenfassung konkreter Wertebereiche und darauf definierten Operationen zu einer Einheit"
@@ -201,7 +168,7 @@ print(preis)
     * bool (Wahrheitswert: True oder False)
     * string (Zeichenkette)
 
----
+--
 ## Datentypen
 <br/>
 <pre>
@@ -216,7 +183,7 @@ print(type(alter))
 </code>
 </pre>
 
----
+--
 ## Datentypen und Operatoren (1)
 <br/>
 <pre>
@@ -231,7 +198,7 @@ print(mystring.lower())
 </code>
 </pre>
 
----
+--
 ## Datentypen und Operatoren (2)
 <br/>
 <pre>
@@ -243,7 +210,7 @@ print(ergebnis)
 </code>
 </pre>
 
----
+--
 ## Datentypen und Operatoren (3)
 <br/>
 <pre>
@@ -255,7 +222,7 @@ print(ergebnis)
 </code>
 </pre>
 
----
+--
 ## Datentypen und Operatoren (4)
 <br/>
 <pre>
@@ -268,7 +235,7 @@ print(ergebnis)
 </pre>
 
 
----
+--
 ## Datentypen und Operatoren (5)
 <br/>
 <pre>
@@ -282,10 +249,10 @@ print(ergebnis)
 
 
 
---
+---
 # Datenstrukturen und Operatoren
 
----
+--
 ## Datenstrukturen
 <br/>
 * Bestimmtes Format, in dem die Daten vorliegen und vom Algorithmus angesprochen werden <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -294,15 +261,15 @@ print(ergebnis)
     * Wörterbuch (dict)
     * Matrix (dataframe)
 
----
+--
 ## Datenstruktur: Liste
-<img height="250" data-src="img/E04/eineliste.png"></img>
+<img height="250" data-src="img/E03/eineliste.png"></img>
 <br/>
 * Sequenzielle Struktur, durchgezählt ("Hausnummern")
 * Jede Position in der Struktur kann einen Wert haben ("Familienname")
 * Python: Zählung startet by 0 (!)
 
----
+--
 ## Liste und Operatoren
 <br/>
 <pre>
@@ -316,7 +283,7 @@ print(meineListe[1:3])
 </pre>
 
 
----
+--
 ## Liste und Operatoren
 <br/>
 <pre>
@@ -330,7 +297,7 @@ print(meineListe)
 </code>
 </pre>
 
----
+--
 ## Funktion
 <br/>
 <pre>
@@ -346,7 +313,7 @@ print(textlaenge)
 * Funktion (bspw.: len, print)
 * Parameter (Input für die Funktion: Daten, Parameter)
 
----
+--
 ## Objekt und Methode
 <br/>
 <pre>
@@ -361,7 +328,7 @@ print(neuerText)
 * "lower()": Methode aller Objekte vom Typ "string"
 * "()": kann Parameter der Methode enthalten
 
----
+--
 ## Interaktion
 <br/>
 <pre>
@@ -371,7 +338,7 @@ print(name, " - so ein schöner Name!")
 </code>
 </pre>
 
----
+--
 ## Interaktion
 <br/>
 <pre>
@@ -383,15 +350,15 @@ print("Danke! Das Ergebnis lautet", zahl1 * zahl2)
 </pre>
 
 
---
+---
 # 4. Programmstrukturen: Schleifen, Bedingungen, Verzweigungen
 
 
----
+--
 ## while-Schleife
-<img height="500" data-src="img/E04/while-schleife.png"></img>
+<img height="500" data-src="img/E03/while-schleife.png"></img>
 
----
+--
 ## while-Schleife
 <br/>
 * So lange eine Bedingung wahr ist, führe einen bestimmten Code aus und prüfe wieder die Bedingung; wenn die Bedingung nicht wahr ist, führe den Code nicht aus.
@@ -404,7 +371,7 @@ while value > 5:
 print("End of loop")</code>
 </pre>
 
----
+--
 ## Bedingungen
 <br/>
 * Bedingungen geben einen TRUE oder FALSE-Wert zurück
@@ -422,11 +389,11 @@ print("AU" not in "LAUFEN") # nicht enthalten?
 </pre>
 
 
----
+--
 ## for-Schleife
-<img height="500" data-src="img/E04/for-schleife.png"></img>
+<img height="500" data-src="img/E03/for-schleife.png"></img>
 
----
+--
 ## for-Schleife
 <br/>
 * Für jedes Element einer sequenziellen Datenstruktur, führe einen bestimmten Code aus, bis das Ende der Sequenz erreicht ist.
@@ -440,7 +407,7 @@ print("End of loop")
 </pre>
 
 
----
+--
 ## for-Schleife (Iteration)
 <br/>
 <pre>
@@ -452,25 +419,25 @@ print("End of loop")
 </code>
 </pre>
 
----
+--
 ## Blöcke in Python: Einrückung
 <br/>
-<img height="400" data-src="img/E04/pythonbloecke.png"></img>
+<img height="400" data-src="img/E03/pythonbloecke.png"></img>
 
 
----
+--
 ## Verzweigung
-<img height="500" data-src="img/E04/verzweigung.png"></img>
+<img height="500" data-src="img/E03/verzweigung.png"></img>
 
 
----
+--
 ## if/elif/else-Verzweigung
 <br/>
 * Wenn die Bedingung 1 wahr ist, dann führe die Anweisungen 1 aus.
 * (Ansonsten, wenn die Bedingung 2 wahr ist, dann führe die Anweisungen 2 aus.)
 * Ansonsten, führe die Anweisungen 3 aus.
 
----
+--
 ## Beispiel if/elif/else
 <br/>
 <pre>
@@ -486,7 +453,7 @@ else:
 </code>
 </pre>
 
----
+--
 ## Zusammengesetzte Bedingungen
 <br/>
 <pre>
@@ -503,10 +470,10 @@ else:
 * Bedingung and Bedingung
 * Bedingung or Bedingung
 
---
+---
 # 4. Bausteine eines Skripts
 
----
+--
 ## Abstrakte Ebene
 <br/>
 * Input (z.B. vom User oder einer anderen Funktion)
@@ -515,13 +482,13 @@ else:
     * Wiederverwendung: Funktionen
 * Output (Ergebnis)
 
----
+--
 ## Beispielaufgabe
 <br/>
 * Zerlegen Sie einen Satz in seine Wörter; zeigen Sie die Wörter an und geben Sie die Anzahl der Wörter aus.
 * Beispielsatz: "Die Katze sucht den Käsekönig"
 
----
+--
 ## Pseudocode
 <br/>
 <small>
@@ -538,13 +505,13 @@ else:
 
 </small>
 
----
+--
 ## Potentielle Probleme
 <br/>
 * Was ist ein Buchstabe, was ist ein Trennzeichen?
 * Wie können wir Daten zwischenspeichern?
 
----
+--
 ## Beispiellösung
 <pre>
 <code>
@@ -564,7 +531,7 @@ print(len(wörter))
 </pre>
 
 
----
+--
 ## Etwas komplexeres Skript
 <br/>
 * test.py (separat)
@@ -573,10 +540,10 @@ print(len(wörter))
 * Lesbarkeit
 
 
---
+---
 ## 6. "Think like a programmer" -- aber wie?
 
----
+--
 ## Aspekte
 <br/>
 * Fragestellungen operationalisieren
@@ -585,7 +552,7 @@ print(len(wörter))
 * Überblick bewahren
 * Effiziente Lösungen finden
 
----
+--
 ## Entwicklungsschritte
 <br/>
 1. Problem analysieren
@@ -597,13 +564,13 @@ print(len(wörter))
 7. Programm warten / weiterentwickeln
 
 
---
+---
 # Abschluss
 
----
+--
 ## Fragen?
 
----
+--
 ## Lektürehinweise
 <small>
 
@@ -622,18 +589,19 @@ print(len(wörter))
 
 </small>
 
----
+--
 ## Nächste Sitzung
 <br/>
-* 13.11.: Thema: Datenmodellierung 1: Was ist Modellieren?
+* 16.11.: Sitzung fällt aus
+* 23.11.: Thema: Datenmodellierung 1: Was ist Modellieren?
 * Vorbereitung: Fotis Jannidis, "Grundlagen der Datenmodellierung" (Kapitel 7 im Lehrbuch)
 
---
+---
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>Christof Schöch, 2018
+<br/>Christof Schöch, 2017
 <br/>http://www.christof-schoech.de
 <br/>
 <hr/>
