@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- CUSTOMIZE THIS! -->
+<title>Einführung in die Digital Humanities</title>
+<meta name="author" content="Christof Schöch">
+<!-- END -->
+<meta name="description" content="Slides">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+<!-- Code syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+<section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8" data-background-image="img/basics/uni-trier-mini.png" data-background-size="50px" data-background-position="top right">
+<script type="text/template">
+
+## Datenmodellierung 2: Datenbanken<br/>
+<hr/>
+<br/>
+<br/>Vorlesung *Einführung in die Digital Humanities*
+<br/>MSc Digital Humanities | Wintersemester 2018/19
+<br/>
+<br/>Prof. Dr. Christof Schöch
+<br/>
+<br/>
+<hr/>
+<br/><img height="50" data-src="img/basics/uni-trier.png">
+
+
+---
+# Einstieg
+
+
+--
+## Semesterüberblick
+
+<small>
+
+* 23.10.: Digital Humanities im Überblick
+* 30.10.: Digitalisierung: Text und Bild
+* 06.11.: Grundbegriffe des Programmierens
+* 13.11.: Datenmodellierung 1: Modellierung
+* **20.11.: Datenmodellierung 2: Datenbanken**
+* 27.11.: Datenmodellierung 3: Text, Markup, XML
+* 30.11.: Digitale Edition (_Vorlesung statt Übung_)
+* 04.12.: _Übung statt Vorlesung_
+* 11.12.: Geschichte der Digital Humanities
+* 18.12.: Informationsvisualisierung
+* 22.12.-6.1.: *Weihnachtspause*
+* 08.01.: Natural Language Processing
+* 15.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
+* 22.01.: Quantitative Analyse 2: Superv. Machine Learning
+* 29.01.: Open Humanities
+* 05.02.: Klausurtermin
+
+</small>
+
+--
+## Sitzungsüberblick
+<br/>
+1. Datenbanken, wie und wozu?
+2. Domäne: der zu modellierende Gegenstandsbereich
+3. Konzeptuelles Modell: Entity-Relationship-Model
+4. Logisches Modell: Relational Database / Relationale Algebra
+5. Implementierung: Structured Query Language
+
+
+---
+# 1. Datenbanken, wie und wozu?
+
+--
+# (A) Datenbanken...
+<br/>
+* ...eignen sich zur Organisation stark strukturierter Datenbestände <!-- .element: class="fragment" data-fragment-index="1" -->
+* ...erfordern Aufwand beim Design und Befüllen <!-- .element: class="fragment" data-fragment-index="2" -->
+* ...erlauben präzise Suchabfragen auf diesen Beständen <!-- .element: class="fragment" data-fragment-index="3" -->
+* ... erfüllen Grundbedürfnisse geisteswiss. Forschung nach Organisation, Speicherung und Abfragen von Informationen <!-- .element: class="fragment" data-fragment-index="4" -->
+
+
+--
+## Datenbanksystem
+<img height="500" data-src="img/E05/dbms.png"></img>
+
+--
+## Begriffe
+<br/>
+* Datenbanksystem: das Gesamtsystem <!-- .element: class="fragment" data-fragment-index="1" -->
+* Datenbank-Management-System DBMS: die Infrastruktur für die Datenbank <!-- .element: class="fragment" data-fragment-index="2" -->
+* Datenbank: enthält die Daten in strukturierter Form <!-- .element: class="fragment" data-fragment-index="3" -->
+* Datenbestand: die Datensätze, die vorhanden sind <!-- .element: class="fragment" data-fragment-index="4" -->
+* Anwendungen: greifen über Schnittstellen des DBMS auf die Daten zu <!-- .element: class="fragment" data-fragment-index="5" -->
+
+
+--
+## Zwei Aspekte
+<img height="500" data-src="img/E05/three-levels.png"></img>
+
+
+--
+## Prototypischer Ablauf
+<img height="250" data-src="img/E05/ablauf.png"></img>
+<br/>
+(Quelle: Harald Klinke 2017)
+
+
+
+---
+# 2. Domäne und Anforderungen
+
+
+--
+## Domäne: Bibliothek
+
+--
+##  Nutzungsszenario
+<br/>
+>Eine Geisteswissenschaftlerin möchte ihre Bibliothek verwalten. Die Bibliothek umfasst zahlreiche Texte vom Mittelalter bis zur Gegenwart. Die Datenbank soll es ermöglichen, schnell zu überprüfen, welche Autoren und welche Titel vorhanden sind. Die Geisteswissenschaftlerin möchte zudem sortieren können, und zwar nach dem Geburtsdatum bzw. Sterbedatum der Autoren, aber auch nach dem Namen der Autoren. Auf jeden Fall soll für jedes Buch die ISBN verzeichnet werden.
+
+--
+## Anforderungsanalyse
+<br/>
+* Autoren und Bücher unterscheiden
+* Titel, Geburtsdatum, Sterbedatum, ISBN vorhalten
+* Sortierbarkeit ermöglichen
+
+--
+## Naiver Ansatz: Liste
+<br/>
+<small>
+
+* Marx, Karl; Das kommunistische Manifest ; 1818; 1883; 1242829340229
+* Herder, J. ; Bildung der Menschheit ; 1744; 1803; 1534932829103
+* Smith, J. ; An Inquiry into the Nature...; 1744; 1803; 1534932829103
+* Marx, Karl ; Das Kapital ; 1818; 1883; 1231288828783
+* Rousseau, J.-J.; Du contrat social ; 1712; 1778; 1665229181734
+
+</small>
+
+--
+## Verbesserung: Tabelle
+<small>
+
+| Autor         | Titel                       |Geb.|Tod | ISBN        |
+|---------------|-----------------------------|----|----|-------------|
+|Marx, Karl     |Das kommunistische Manifest  |1818|1883|1242829340229|
+|Herder, J.     |Bildung der Menschheit       |1744|1803|1534932829103|
+|Smith, J.      |An Inquiry into the Nature...|1744|1803|1534932829103|
+|Marx, Karl     |Das Kapital                  |1818|1883|1231288828783|
+|Rousseau, J.-J.|Du contrat social            |1712|1778|1665229181734|
+
+</small>
+
+--
+## So weit, so gut...
+<br/>
+* Entitäten: <!-- .element: class="fragment" data-fragment-index="1" -->
+    * Bibliothek
+    * Buch, Titel, ISBN
+    * Autor, Name, Geburtsdatum, Sterbedatum
+* Sortierbar, suchbar, filterbar <!-- .element: class="fragment" data-fragment-index="2" -->
+* Nachteile <!-- .element: class="fragment" data-fragment-index="3" -->
+    * Redundanzen
+    * keine expliziten Beziehungen
+    * keine Mehrfachbearbeitung
+    * keine Schnittstelle
+    * (und: wenig performant)
+
+---
+# 3. Konzeptuelles Modell: <br/>Entity-Relationship-Model
+
+--
+# (A) Einführend
+
+--
+## Vier Aufgaben des konzeptionellen Datenmodells
+<br/>
+* Klassifizierung: Festlegung der Objekttypen / Entitäten <!-- .element: class="fragment" data-fragment-index="1" -->
+* Abstraktion: Bestimmung der relevanten Eigenschaften <!-- .element: class="fragment" data-fragment-index="2" -->
+* Beziehungen: Beschreibung der Zusammenhänge zwischen den Objekten <!-- .element: class="fragment" data-fragment-index="3" -->
+* Identifizierung: Festlegung von eindeutigen Namen / Eigenschaften <!-- .element: class="fragment" data-fragment-index="4" -->
+
+--
+## Entity-Relationship-Modell
+<br/>
+* konzeptuelles Modell: abstrakt
+* erfüllt die vier genannten Aufgaben
+* abstrakte Struktur der Daten (nicht die Daten selbst)
+* bspw. in grafischer Notation festgehalten
+
+--
+## Entity-Relationship-Diagramm
+<img height="500" data-src="img/E05/ER-Diagramm.png"></img>
+
+--
+##Elemente des ER-Modells
+<br/>
+* Entitäten (Objekttypen) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Attribute (Eigenschaft der Objekte) <!-- .element: class="fragment" data-fragment-index="2" -->
+* Werte (Ausprägung einer Eigenschaft) <!-- .element: class="fragment" data-fragment-index="3" -->
+* Beziehungen (inhaltlicher Zusammenhang zwischen Entitäten) <!-- .element: class="fragment" data-fragment-index="4" -->
+* Kardinalität von Beziehungen (mengenmäßige Beziehung) <!-- .element: class="fragment" data-fragment-index="5" -->
+
+
+--
+## Kardinalität?
+<img height="500" data-src="img/E05/kardinal-priester.png"></img>
+<br/>
+Typen: 1:1, 1:n, n:1, n:m
+
+--
+# (B) Beispiel Bibliothek
+
+--
+## Bibliothek: Bücher und Autoren
+<img height="500" data-src="img/E05/ER1.png"></img>
+<br/><small>(Quelle für Beispiel und Darstellung: Fotis Jannidis, Würzburg. Bildquelle: Wiki Commons, https://commons.wikimedia.org/wiki/File:Johann_Wolfgang_von_Goethe_(Josef_Stieler).jpg), gemeinfrei.</small>
+
+--
+## Klassifikation
+<img height="500" data-src="img/E05/ER2.png"></img>
+<br/><small>(Quelle für Beispiel und Darstellung: Fotis Jannidis, Würzburg. Bildquelle: Wiki Commons, https://commons.wikimedia.org/wiki/File:Johann_Wolfgang_von_Goethe_(Josef_Stieler).jpg), gemeinfrei.</small>
+
+--
+## Abstraktion
+<img height="500" data-src="img/E05/ER3.png"></img>
+<br/><small>(Quelle für Beispiel und Darstellung: Fotis Jannidis, Würzburg. Bildquelle: Wiki Commons, https://commons.wikimedia.org/wiki/File:Johann_Wolfgang_von_Goethe_(Josef_Stieler).jpg), gemeinfrei.</small>
+
+--
+## Identifizierung
+<img height="500" data-src="img/E05/ER4.png"></img>
+<br/><small>(Quelle für Beispiel und Darstellung: Fotis Jannidis, Würzburg. Bildquelle: Wiki Commons, https://commons.wikimedia.org/wiki/File:Johann_Wolfgang_von_Goethe_(Josef_Stieler).jpg), gemeinfrei.</small>
+
+--
+## Beziehungen
+<img height="500" data-src="img/E05/ER6.png"></img>
+<br/><small>(Quelle für Beispiel und Darstellung: Fotis Jannidis, Würzburg. Bildquelle: Wiki Commons, https://commons.wikimedia.org/wiki/File:Johann_Wolfgang_von_Goethe_(Josef_Stieler).jpg), gemeinfrei.</small>
+
+--
+## Kardinalität
+<img height="500" data-src="img/E05/ER5.png"></img>
+<br/><small>(Quelle für Beispiel und Darstellung: Fotis Jannidis, Würzburg. Bildquelle: Wiki Commons, https://commons.wikimedia.org/wiki/File:Johann_Wolfgang_von_Goethe_(Josef_Stieler).jpg), gemeinfrei.</small>
+
+---
+# Logisches Datenmodell: Relational Database Model (RDM)
+
+--
+# (A) Grundideen
+
+--
+## Grundideen des RDM
+<br/>
+* ER-Modell: Entitäten, Attribute, Relationen <!-- .element: class="fragment" data-fragment-index="1" -->
+* Jede Klasse von Entität (gleiche Attribute) bekommt eine separate Tabelle <!-- .element: class="fragment" data-fragment-index="2" -->
+* Jeder Eintrag bekommt einen Identifier ("key") <!-- .element: class="fragment" data-fragment-index="3" -->
+* Relationen zwischen Entitäten laufen über die "keys" <!-- .element: class="fragment" data-fragment-index="4" -->
+
+--
+## Datenbankschema
+<br/>
+* Legt die Struktur der Datenbank fest <!-- .element: class="fragment" data-fragment-index="1" -->
+* welche Tabellen (="Relationen") gibt es? <!-- .element: class="fragment" data-fragment-index="2" -->
+* Für jede Tabelle: Welche Spalten gibt es? <!-- .element: class="fragment" data-fragment-index="3" -->
+* Für jede Spalte: Welcher Datentyp ist erlaubt? (str, int, bool) <!-- .element: class="fragment" data-fragment-index="4" -->
+
+
+--
+# (B) Normalisierung
+
+--
+## Was ist Normalisierung?
+<br/>
+* Ziel ist die Reduktion von Redundanz
+* "Normalformen" = Klassen von Qualitätskriterien <!-- .element: class="fragment" data-fragment-index="1" -->
+    * Erste Normalform: keine Wiederholungsgruppen; nur einfache Werte <!-- .element: class="fragment" data-fragment-index="2" -->
+    * Zweite Normalform: Attribute sind "voll funktional abhängig" vom (ganzen) Primärschlüssel <!-- .element: class="fragment" data-fragment-index="3" -->
+    * Dritte Normalform: Keine transitiven Abhängigkeiten: aus einem Nichtschlüsselattribut folgt ein anderes Nicht-Schlüsselattribut <!-- .element: class="fragment" data-fragment-index="4" -->
+* Normalisierung hat ihre Grenzen: es kann auch ineffizient werden <!-- .element: class="fragment" data-fragment-index="5" -->
+
+--
+## Ausgangslage
+<small>
+
+|  ISBN       | Titel                       | Autor         |Geb.|Tod |
+|-------------|-----------------------------|---------------|----|----|
+|1242829340229|Das kommunistische Manifest, Das Kapital|Marx, Karl|1818|1883|
+|1534932829103|Bildung der Menschheit       |Herder, J.     |1744|1803|
+|1534932829103|An Inquiry into the Nature...|Smith, J.      |1744|1803|
+|1665229181734|Du contrat social            |Rousseau, J.-J.|1712|1778|
+
+</small>
+
+--
+## Atomisierung (= 1. NF)
+<small>
+
+
+|  ISBN       | Titel                       |AutorVN| AutorNN |Geb.|Tod |
+|-------------|-----------------------------|-------|---------|----|----|
+|1242829340229|Das kommunistische Manifest  |Karl   | Marx    |1818|1883|
+|1242829340229|Das Kapital                  |Karl   | Marx    |1818|1883|
+|1534932829103|Bildung der Menschheit       | J.    |Herder   |1744|1803|
+|1534932829103|An Inquiry into the Nature...| J.    |Smith    |1744|1803|
+|1665229181734|Du contrat social            | J.-J. |Rousseau |1712|1778|
+
+
+
+</small>
+
+--
+## Auftrennung (+Primärschlüssel) (=2. NF)
+
+<small>
+
+| ISBN        | Titel                       |
+|-------------|-----------------------------|
+|1242829340229|Das kommunistische Manifest  |
+|1534932829103|Bildung der Menschheit       |
+|1534932829103|An Inquiry into the Nature...|
+|1231288828783|Das Kapital                  |
+|1665229181734|Du contrat social            |
+
+<br/>
+
+| GND      | AutorVN |AutorNN | Geb.|Tod |
+|----------|---------|--------|-----|----|
+| 19283746 | Karl    | Marx   | 1818|1883|
+| 98761234 | J.      | Herder | 1744|1803|
+| 55652008 | J.      | Smith  | 1744|1803|
+| 11223344 | J.-J.   |Rousseau| 1712|1778|
+
+</small>
+
+
+--
+## (a) Fremdschlüssel
+
+<small>
+
+| ISBN        | Titel                       | GND      |
+|-------------|-----------------------------|----------|
+|1242829340229|Das kommunistische Manifest  | 19283746 |
+|1534932829103|Bildung der Menschheit       | 98761234 |
+|1534932829103|An Inquiry into the Nature...| 55652008 |
+|1231288828783|Das Kapital                  | 19283746 |
+|1665229181734|Du contrat social            | 11223344 |
+
+<br/>
+
+| GND      | AutorVN |AutorNN | Geb.|Tod |
+|----------|---------|--------|-----|----|
+| 19283746 | Karl    | Marx   | 1818|1883|
+| 98761234 | J.      | Herder | 1744|1803|
+| 55652008 | J.      | Smith  | 1744|1803|
+| 11223344 | J.-J.   |Rousseau| 1712|1778|
+
+</small>
+
+
+--
+## (b) Assoziationstabelle
+
+<small>
+
+| ISBN        | Titel                       |
+|-------------|-----------------------------|
+|1242829340229|Das kommunistische Manifest  |
+|1534932829103|Bildung der Menschheit       |
+
+<br/>
+
+| GND      | AutorVN |AutorNN | Geb.|Tod |
+|----------|---------|--------|-----|----|
+| 19283746 | J.      | Herder | 1744|1803|
+| 98761234 | J.      | Herder | 1744|1803|
+
+<br/>
+Autorschaftstabelle
+
+| GND      | ISBN        |
+|----------|-------------|
+| 19283746 |1242829340229|
+| 98761234 |1534932829103|
+
+</small>
+
+
+--
+# (C) Relationale Algebra
+
+--
+## Edgar F. Codd (1923-2003)
+<img height="400" data-src="img/E05/codd-paper.png"></img>
+<br/>
+Entwickelte das relationale Datenbankmodell
+<br/><br/><small>Codd, Edgar F. (1970). "A relational model of data for large shared data banks". Communications of the ACM 13/6.</small>
+<br/><small>(Porträt von Codd: siehe:  https://en.wikipedia.org/wiki/Edgar_F._Codd#/media/File:Edgar_F_Codd.jpg)</small>
+
+--
+## Codd
+
+>"It was Codd's very great insight that a database could be thought of as a set of relations, that a relation in turn could be thought of as a set of propositions …, and hence that all of the apparatus of formal logic could be directly applied to the problem of database access and related problems."
+
+<br/><br/><small>(Date, C. J. (2001). The Database Relational Model: A Retrospective Review and Analysis. Reading: Addison-Wesley.)</small>
+
+
+--
+## Formale Logik?
+<br/>
+* Jede Tabelle ist ein Typ von Relation <!-- .element: class="fragment" data-fragment-index="1" -->
+* Jede Tabellenzeile enthält Aussagen <!-- .element: class="fragment" data-fragment-index="2" -->
+    * Marx, ist Autor von, Das Kapital
+    * Marx, ist gestorben, 1883
+* Formales Schließen: <!-- .element: class="fragment" data-fragment-index="3" -->
+    * Das Kapital, wurde verfasst vor, 1883
+    * (Denn: Autoren verfassen nur zu Lebzeiten Werke)
+
+---
+# 4. Structured Query Language (SQL)
+
+--
+## SQL
+<br/>
+* SQL – Structured Query Language
+* Standardsprache zur Erzeugung, Abfrage und Verwaltung von Datenbanken
+* Keine 1:1 Umsetzung des relationalen Datenmodells, aber nahe dran
+* Wird von allen relationalen Datenbanken unterstützt
+* ANSI-Standard (aber es gibt Dialekte)
+
+--
+## Drei Bereiche von SQL
+* Datendefinition <!-- .element: class="fragment" data-fragment-index="1" -->
+    * Data Definition Language
+    * bspw.: Tabelle erstellen:
+    * CREATE TABLE Autoren ...
+* Datenmanipulation <!-- .element: class="fragment" data-fragment-index="2" -->
+    * Data Manipulation Language
+    * bspw.: Eintrag in einer Tabelle vornehmen:
+    * INSERT INTO Autoren ...
+* Datenabfrage <!-- .element: class="fragment" data-fragment-index="3" -->
+    * Data Query Language
+    * bspw.: Suchabfrage formulieren
+    * SELECT Name FROM Autoren ...
+
+
+--
+## SQL in Python
+<br/>
+* Library: sqlite3
+* Dokumentation: https://docs.python.org/3.7/library/sqlite3.html
+
+--
+## Data Definition: CREATE
+
+<pre>
+<code>
+CREATE TABLE Buecher (
+   ISBN INTEGER PRIMARY KEY,
+   GND INTEGER,
+   TITEL CHARACTER (50)
+);
+</code>
+</pre>
+<br/>
+* Erstellt eine neue Tabelle "Buecher" mit ISBN, GND und Titel
+* Weitere Befehle: Ändern (ALTER), Löschen (DROP) einer Tabelle
+
+
+--
+## Data Manipulation: INSERT
+
+<pre>
+<code>
+INSERT INTO Buecher (ISBN,GND,TITEL)
+   values (3211810002, 449382, "Faust")
+</code>
+</pre>
+<br/>
+* Fügt neue Datensätze in eine Tabelle ein
+
+--
+## Data Query: Bausteine
+<br/>
+* SELECT: welche Informationen sollen angezeigt werden?
+* FROM: welcher Tabellen/Spalten sollen abgefragt werden?
+* WHERE: welche Bedingungen werden formuliert?
+
+--
+## Einfaches Beispiel
+<br/>
+<pre>
+<code>
+SELECT * FROM Buecher
+WHERE TITEL=="Faust"
+</code>
+</pre>
+<br/>
+* Zeige alle Spalten an, 
+* aus der Tabelle "Buecher";
+* und zwar für diejenigen Einträge, <br/>bei denen der Titel "Faust" lautet
+
+
+--
+## Einfaches Beispiel
+<br/>
+<pre>
+<code>
+SELECT TITEL FROM Buecher
+WHERE GND=="98765"
+</code>
+</pre>
+<br/>
+* Zeige die Spalten "name" und "geburt" an;
+* aus der Tabelle "autoren";
+* und zwar für diejenigen Einträge, <br/>bei denen "geburt" größer als 1700 ist.
+
+
+
+---
+# Anwendungen
+
+--
+## SQL in Python
+<br/>
+* Library: sqlite3
+* Dokumentation: https://docs.python.org/3.7/library/sqlite3.html
+
+
+--
+## Beispiel in LibreOffice Base
+<br/>
+* Domäne / Anforderungen <!-- .element: class="fragment" data-fragment-index="1" -->
+    * Beziehungen zwischen Figuren in Theaterstücken
+* Konzeptuelles Datenmodell (ER-Modell) <!-- .element: class="fragment" data-fragment-index="2" -->
+    * Entitäten: Figuren, Szenen
+    * Relation: Anwesenheit von F in S
+* Logisches Datenmodell (Tabellen) <!-- .element: class="fragment" data-fragment-index="3" -->
+    * Figuren (Name, Geschlecht, Status
+    * Szenen (Aktnummer, Szenennummer)
+    * Relation (Szene, Figur)
+* Implementierung <!-- .element: class="fragment" data-fragment-index="4" -->
+    * hier in Libre Office Base
+
+--
+<img height="550" data-src="img/E05/base.png"></img>
+
+--
+## MySQL Workbench
+<img height="500" data-src="img/E05/mysql-workbench.png"></img>
+
+
+
+---
+# Abschluss
+
+
+--
+## Fragen?
+
+--
+## Lektürehinweise
+<small>
+
+* Harald Klinke, "Datenbanken", in: *Digital Humanities: Eine Einführung*, hg. von Fotis Jannidis, Hubertus Kohle und Malte Rehbein. Stuttgart: Metzler, 2017, S. 109-127.
+<br/>
+<br/>
+**Weitere Empfehlungen**
+* Stephen Ramsay, "Databases", in: *The Companion to Digital Humanities*, ed. by Susan Schreibman, Ray Siemens and John Unsworth. Oxford: Blackwell, 2008. URL: http://www.digitalhumanities.org/companion/ (kostenfrei)
+* Timo Hempel, "Normalisierung von Datenbanken", 2014. URL: https://www.tinohempel.de/info/info/datenbank/normalisierung.htm (gut erklärt)
+<br/>
+<br/>
+**Darüber hinaus**
+* René Steiner. *Grundkurs Relationale Datenbanken*. 6. Auflage. Braunschweig: Vieweg, 2006. [ER, SQL]
+
+</small>
+
+--
+## Nächste Sitzung
+<br/>
+* 27.11.: Thema: Datenmodellierung 3: Markup, XML, TEI
+
+---
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>Christof Schöch, 2018
+<br/>http://www.christof-schoech.de
+<br/>
+<hr/>
+Lizenz: [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)
+<br/>
+
+
+</script>
+
+<!-- DON'T TOUCH UNLESS YOU KNOW WHAT YOU'RE DOING :-) -->
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+    // Optional reveal.js plugins
+    dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+Reveal.configure({ slideNumber: true });
+</script>
+</body>
+</html>
