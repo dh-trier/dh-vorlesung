@@ -31,7 +31,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <body>
 <div class="reveal">
 <div class="slides">
-<section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8" data-background-image="img/basics/uni-trier.png" data-background-size="300px" data-background-position="top 10px right 10px">
+<section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8" data-background-image="img/basics/uni-trier-mini.png" data-background-size="60px" data-background-position="top 10px right 10px">
 <script type="text/template">
 <br/>
 ## Grundbegriffe des Programmierens<br/>
@@ -44,6 +44,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <br/>
 Prof. Dr. Christof Schöch
 <br/>
+<hr/>
 <img height="50" data-src="img/basics/uni-trier.png"></img>
 
 ---
@@ -100,13 +101,15 @@ Prof. Dr. Christof Schöch
 --
 ## Beispiel-Sprache: Python
 <br/>
-* Eine Skript-Sprache
-* Nimmt uns viele Details ab (u.a. Datentypen in Variablen)
-* für Menschen ziemlich gut lesbar
-* performant v.a. durch darunterliegende Implementierungen in C
-* Zahlreiche sog. IDEs
+* Eine Skript-Sprache, die uns einige Details abnimmt <!-- .element: class="fragment" data-fragment-index="1" -->
+    * interpretierte Sprache (Prototyping)
+    * implizite Datentypen in Variablen
+    * automatische Speicherverwaltung
+* für Menschen ziemlich gut lesbar <!-- .element: class="fragment" data-fragment-index="2" -->
+* performant v.a. durch darunterliegende Implementierungen in C <!-- .element: class="fragment" data-fragment-index="3" -->
+* Zahlreiche sog. IDEs <!-- .element: class="fragment" data-fragment-index="4" -->
     * "Integrated Development Environments"
-    * Beispiele: Thonny, Geany, Spyder, PyCharm, etc.
+    * Beispiele: Thonny, Geany, Atom, Spyder, PyCharm, etc.
 
 --
 ## Thonny
@@ -469,12 +472,12 @@ else:
 # 4. Bausteine eines Skripts
 
 --
-## Abstrakte Ebene
+## Abstrakte Ebene: Funktionen
 <br/>
-* Input (z.B. vom User oder einer anderen Funktion)
-* Algorithmus: Operationen, Methoden
+* Input (Daten und Parameter)
+* Algorithmus
+    * Operationen, Methoden
     * Kontrollstrukturen: Bedingungen, Schleifen
-    * Wiederverwendung: Funktionen
 * Output (Ergebnis)
 
 --
@@ -524,6 +527,31 @@ print(wörter)
 print(len(wörter))
 </code>
 </pre>
+
+--
+## Beispiellösung (Funktion)
+<pre>
+<code>
+satz = "Die Katze sucht den Käsekönig"
+def count_words(satz): 
+    trenner = " "
+    wörter = []
+    wort = ""
+    for element in satz:
+        if element != trenner:
+            wort = wort+element
+        else:
+            wörter.append(wort)
+            wort = ""
+    return wörter
+
+wörter = count_words(satz)
+print(wörter)
+print(len(wörter))
+</code>
+</pre>
+
+
 
 
 --
