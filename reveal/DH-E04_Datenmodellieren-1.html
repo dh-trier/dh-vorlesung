@@ -38,7 +38,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <hr/>
 <br/>
 <br/>Vorlesung *Einführung in die Digital Humanities*
-<br/>MSc Digital Humanities | Wintersemester 2018/19
+<br/>MSc Digital Humanities | Wintersemester 2019/20
 <br/>
 <br/>Prof. Dr. Christof Schöch
 <br/>
@@ -56,22 +56,21 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 <small>
 
-* 23.10.: Digital Humanities im Überblick
-* 30.10.: Digitalisierung: Text und Bild
-* 06.11.: Grundbegriffe des Programmierens
-* **13.11.: Datenmodellierung 1: Modellierung**
-* 20.11.: Datenmodellierung 2: Datenbanken
-* 27.11.: Datenmodellierung 3: Text, Markup, XML
-* ***30.11.: Digitale Edition (Vorlesung statt Übung)***
-* ***04.12.: (Übung statt Vorlesung)***
-* 11.12.: Geschichte der Digital Humanities
-* 18.12.: Informationsvisualisierung
-* 22.12.-6.1.: *Weihnachtspause*
-* 08.01.: Natural Language Processing
-* 15.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
-* 22.01.: Quantitative Analyse 2: Superv. Machine Learning
-* 29.01.: Open Humanities
-* 05.02.: Klausurtermin
+* 29.10.: Digital Humanities im Überblick
+* 05.11.: Digitalisierung: Text und Bild
+* 12.11.: Grundbegriffe des Programmierens
+* **19.11.: Datenmodellierung 1: Modellierung**
+* 26.11.: Datenmodellierung 2: Datenbanken
+* 03.12.: Datenmodellierung 3: Text, Markup, XML
+* 10.12.: Digitale Edition
+* 17.12.: Geschichte der Digital Humanities
+* 21.12.-5.1.: *Weihnachtspause*
+* 07.01.: Informationsvisualisierung
+* 14.01.: Natural Language Processing
+* 21.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
+* 28.01.: Quantitative Analyse 2: Superv. Machine Learning
+* 04.02.: Open Humanities
+* 11.02.: Klausurtermin
 
 </small>
 
@@ -116,16 +115,16 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 --
 ## Strukturierte Daten?
 <br/>
-* strukturiert: bspw. Dictionaries oder Datenbanken
-* semi-strukturiert: bspw. XML-Dateien
-* unstrukturiert: bspw. plain text oder Rastergrafiken
+* strukturiert: bspw. Relationale Datenbanken
+* semi-strukturiert: bspw. XML-Dateien, JSON-Dateien
+* unstrukturiert: bspw. plain text oder Pixelgrafiken
 
 --
 ## Datenstrukturen
 <br/>
 * linear: bspw. Listen, Tabellen
-* hierarchisch: bspw. XML-Format
-* multi-relational: bspw. Netzwerke
+* hierarchisch: bspw. XML oder JSON
+* multi-relational: bspw. Netzwerke (Graphen)
 
 --
 ## Verwandte Begriffe
@@ -182,7 +181,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
     * Modell für (zweckorientiert, handlungsleitend)
 * Gegenstandsmodell vs. Prozessmodell <!-- .element: class="fragment" data-fragment-index="2" -->
 * Statistisches Modell vs. Datenmodell <!-- .element: class="fragment" data-fragment-index="3" -->
-* "curation-driven" vs. "research-driven" <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 ## Statistisches Modell
@@ -215,7 +213,7 @@ start =
   }
 </code>
 </pre>
-(Schema in Relax NG compact syntax)
+Eine Formulierung eines Datenmodells<br/>(Schema in Relax NG compact syntax)
 
 
 ---
@@ -241,14 +239,12 @@ start =
 --
 ## Drei Abstraktionslevels (Beispiel)
 <br/>
-1. Bestimmte digitale Kodierung eines bestimmten Briefs (XML-Datei: Modellierte Instanz) <!-- .element: class="fragment" data-fragment-index="2" -->
-2. Elemente mit Eigenschaften und Relationen bei Briefen (Schema: Datenmodell) <!-- .element: class="fragment" data-fragment-index="3" -->
-3. Eine formale Sprache, mit der die Elemente und Relationen definiert werden können (XML: Metamodell) <!-- .element: class="fragment" data-fragment-index="4" -->
-
-
---
-## 2 x 3 (TEI)
-<img height="400" data-src="img/E04/datenmodell_tei.png"></img>
+1. Bestimmte digitale Kodierung eines bestimmten Briefs <!-- .element: class="fragment" data-fragment-index="1" -->
+    * konkrete XML-Datei = (modellierte) Instanz
+2. Elemente mit Eigenschaften und Relationen bei Briefen <!-- .element: class="fragment" data-fragment-index="2" -->
+    * konkretes Schema = (logisches) Datenmodell
+3. Eine formale Sprache, mit der die Elemente und Relationen definiert werden können <!-- .element: class="fragment" data-fragment-index="3" -->
+    * bspw. Relax NG oder XML = (allgemeines) Metamodell
 
 
 --
@@ -256,10 +252,6 @@ start =
 <img height="500" data-src="img/E04/xml-tree-structure_poem.png"></img>
 <br/><small>(Quelle: Quelle: „A gentle introduction to XML“, in: Sperberg-McQueen, C.M.; Burnard, Lou (Hg.), Guidelines for Electronic Text Encoding and Interchange, 2004. http://www.tei-c.org/Vault/P5/1.0.1/doc/tei-p4-doc/html/SG.html, <a href="http://creativecommons.org/licenses/by/3.0/">CC-BY 3.0.</a>)</small>
 
-
---
-## 2 x 3 (DB)
-<img height="500" data-src="img/E04/datenmodell_db.png"></img>
 
 
 ---
@@ -354,11 +346,10 @@ start =
 </small>
 
 --
-## Nächste Termine
+## Nächster Termin
 <br/>
-* 20.11.: Thema: Datenmodellierung 2: Datenbanken
-* 27.11.: Thema: Datenmodellierung 3: Text, Markup, XML
-* 30.11.: Thema: Digitale Edition
+* 26.11.: Thema: Datenmodellierung 2: Datenbanken<br/>Vorbereitung: Kapitel "Datenbanken" in der Dateiablage
+
 
 ---
 <br/>
