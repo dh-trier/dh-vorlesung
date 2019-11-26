@@ -38,7 +38,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <hr/>
 <br/>
 <br/>Vorlesung *Einführung in die Digital Humanities*
-<br/>MSc Digital Humanities | Wintersemester 2018/19
+<br/>MSc Digital Humanities | Wintersemester 2019/20
 <br/>
 <br/>Prof. Dr. Christof Schöch
 <br/>
@@ -56,22 +56,22 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 <small>
 
-* 23.10.: Digital Humanities im Überblick
-* 30.10.: Digitalisierung: Text und Bild
-* 06.11.: Grundbegriffe des Programmierens
-* 13.11.: Datenmodellierung 1: Modellierung
-* **20.11.: Datenmodellierung 2: Datenbanken**
-* 27.11.: Datenmodellierung 3: Text, Markup, XML
-* 30.11.: Digitale Edition (_Vorlesung statt Übung_)
-* 04.12.: _Übung statt Vorlesung_
-* 11.12.: Geschichte der Digital Humanities
-* 18.12.: Informationsvisualisierung
-* 22.12.-6.1.: *Weihnachtspause*
-* 08.01.: Natural Language Processing
-* 15.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
-* 22.01.: Quantitative Analyse 2: Superv. Machine Learning
-* 29.01.: Open Humanities
-* 05.02.: Klausurtermin
+* 29.10.: Digital Humanities im Überblick
+* 05.11.: Digitalisierung: Text und Bild
+* 12.11.: Grundbegriffe des Programmierens
+* 19.11.: Datenmodellierung 1: Modellierung
+* **26.11.: Datenmodellierung 2: Datenbanken**
+* 03.12.: Datenmodellierung 3: Text, Markup, XML
+* 10.12.: Digitale Edition
+* 17.12.: Geschichte der Digital Humanities
+* 21.12.-5.1.: *Weihnachtspause*
+* 07.01.: Informationsvisualisierung
+* 14.01.: Natural Language Processing
+* 21.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
+* 28.01.: Quantitative Analyse 2: Superv. Machine Learning
+* 04.02.: Open Humanities
+* 11.02.: Klausurtermin
+
 
 </small>
 
@@ -91,10 +91,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 --
 # (A) Datenbanken...
 <br/>
-* ...eignen sich zur Organisation stark strukturierter Datenbestände <!-- .element: class="fragment" data-fragment-index="1" -->
-* ...erfordern Aufwand beim Design und Befüllen <!-- .element: class="fragment" data-fragment-index="2" -->
-* ...erlauben präzise Suchabfragen auf diesen Beständen <!-- .element: class="fragment" data-fragment-index="3" -->
-* ... erfüllen Grundbedürfnisse geisteswiss. Forschung nach Organisation, Speicherung und Abfragen von Informationen <!-- .element: class="fragment" data-fragment-index="4" -->
+* eignen sich zur Organisation stark strukturierter Datenbestände <!-- .element: class="fragment" data-fragment-index="1" -->
+* können mit umfangreichen, detaillierten Datenbeständen befüllt werden <!-- .element: class="fragment" data-fragment-index="2" -->
+* erlauben präzise Suchabfragen auf diesen Beständen <!-- .element: class="fragment" data-fragment-index="3" -->
+* => erfüllen Grundbedürfnisse geisteswiss. Forschung nach Organisation, Speicherung und Abfragen von Informationen <!-- .element: class="fragment" data-fragment-index="4" -->
 
 
 --
@@ -105,7 +105,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 ## Begriffe
 <br/>
 * Datenbanksystem: das Gesamtsystem <!-- .element: class="fragment" data-fragment-index="1" -->
-* Datenbank-Management-System DBMS: die Infrastruktur für die Datenbank <!-- .element: class="fragment" data-fragment-index="2" -->
+* Datenbank-Management-System (DBMS): die Infrastruktur für die Datenbank <!-- .element: class="fragment" data-fragment-index="2" -->
 * Datenbank: enthält die Daten in strukturierter Form <!-- .element: class="fragment" data-fragment-index="3" -->
 * Datenbestand: die Datensätze, die vorhanden sind <!-- .element: class="fragment" data-fragment-index="4" -->
 * Anwendungen: greifen über Schnittstellen des DBMS auf die Daten zu <!-- .element: class="fragment" data-fragment-index="5" -->
@@ -194,10 +194,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 --
 ## Vier Aufgaben des konzeptionellen Datenmodells
 <br/>
-* Klassifizierung: Festlegung der Objekttypen / Entitäten <!-- .element: class="fragment" data-fragment-index="1" -->
-* Abstraktion: Bestimmung der relevanten Eigenschaften <!-- .element: class="fragment" data-fragment-index="2" -->
-* Beziehungen: Beschreibung der Zusammenhänge zwischen den Objekten <!-- .element: class="fragment" data-fragment-index="3" -->
-* Identifizierung: Festlegung von eindeutigen Namen / Eigenschaften <!-- .element: class="fragment" data-fragment-index="4" -->
+* Klassifizierung: Festlegung der Objekttypen (Entitäten) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Abstraktion: Bestimmung der relevanten Eigenschaften (Attribute) <!-- .element: class="fragment" data-fragment-index="2" -->
+* Beziehungen: Beschreibung der Zusammenhänge zwischen den Objekten (Relationen) <!-- .element: class="fragment" data-fragment-index="3" -->
+* Identifizierung: Festlegung von eindeutigen Namen (Schlüssel) <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 ## Entity-Relationship-Modell
@@ -217,7 +217,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 * Entitäten (Objekttypen) <!-- .element: class="fragment" data-fragment-index="1" -->
 * Attribute (Eigenschaft der Objekte) <!-- .element: class="fragment" data-fragment-index="2" -->
 * Werte (Ausprägung einer Eigenschaft) <!-- .element: class="fragment" data-fragment-index="3" -->
-* Beziehungen (inhaltlicher Zusammenhang zwischen Entitäten) <!-- .element: class="fragment" data-fragment-index="4" -->
+* Relationen (Beziehungen zwischen Entitäten) <!-- .element: class="fragment" data-fragment-index="4" -->
 * Kardinalität von Beziehungen (mengenmäßige Beziehung) <!-- .element: class="fragment" data-fragment-index="5" -->
 
 
@@ -286,15 +286,25 @@ Typen: 1:1, 1:n, n:1, n:m
 --
 # (B) Normalisierung
 
+
 --
-## Was ist Normalisierung?
+## Normalisierung: Definition
 <br/>
-* Ziel ist die Reduktion von Redundanz
-* "Normalformen" = Klassen von Qualitätskriterien <!-- .element: class="fragment" data-fragment-index="1" -->
-    * Erste Normalform: keine Wiederholungsgruppen; nur einfache Werte <!-- .element: class="fragment" data-fragment-index="2" -->
-    * Zweite Normalform: Attribute sind "voll funktional abhängig" vom (ganzen) Primärschlüssel <!-- .element: class="fragment" data-fragment-index="3" -->
-    * Dritte Normalform: Keine transitiven Abhängigkeiten: aus einem Nichtschlüsselattribut folgt ein anderes Nicht-Schlüsselattribut <!-- .element: class="fragment" data-fragment-index="4" -->
-* Normalisierung hat ihre Grenzen: es kann auch ineffizient werden <!-- .element: class="fragment" data-fragment-index="5" -->
+>Unter Normalisierung eines relationalen Datenschemas (Tabellenstruktur) versteht man die Aufteilung von Attributen (Tabellenspalten) in mehrere Relationen (Tabellen) gemäß den Normalisierungsregeln (s. u.), so dass eine Form entsteht, die keine Redundanzen mehr enthält. <br/><br/>(Quelle: Wikipedia, Art. "Normalisierung (Datenbank)",  https://de.wikipedia.org/wiki/Normalisierung_(Datenbank) )
+
+--
+## Was sind "Normalformen"?
+<br/>
+* Normalformen sind Klassen von Qualitätskriterien <!-- .element: class="fragment" data-fragment-index="1" -->
+* Sie werden nach und nach angewandt, um die Qualität der Datenbankstruktur zu verbessern <!-- .element: class="fragment" data-fragment-index="2" -->
+* Wir beschränken uns auf die erste, zweite und dritte Normalform <!-- .element: class="fragment" data-fragment-index="3" -->
+* Normalisierung hat ihre Grenzen: es kann auch ineffizient werden <!-- .element: class="fragment" data-fragment-index="4" -->
+
+--
+## Normalformen (NF)
+* 1. NF: Jedes Attribut der Relation hat atomare Werte; es gibt keine Wiederholungsgruppen <!-- .element: class="fragment" data-fragment-index="1" -->
+* 2. NF: Attribute sind "voll funktional abhängig" vom (ganzen) Primärschlüssel <!-- .element: class="fragment" data-fragment-index="2" -->
+* 3. NF: Kein Nichtschlüsselattribut ist von einem anderen Nichtschlüsselattribut abhängig <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 ## Ausgangslage
@@ -310,9 +320,8 @@ Typen: 1:1, 1:n, n:1, n:m
 </small>
 
 --
-## Atomisierung (= 1. NF)
+## Erste Normalform
 <small>
-
 
 |  ISBN       | Titel                       |AutorVN| AutorNN |Geb.|Tod |
 |-------------|-----------------------------|-------|---------|----|----|
@@ -322,12 +331,12 @@ Typen: 1:1, 1:n, n:1, n:m
 |1534932829103|An Inquiry into the Nature...| J.    |Smith    |1744|1803|
 |1665229181734|Du contrat social            | J.-J. |Rousseau |1712|1778|
 
-
+(= Atomisierung, keine Wiederholdungsgruppen)
 
 </small>
 
 --
-## Auftrennung (+Primärschlüssel) (=2. NF)
+## Zweite Normalform
 
 <small>
 
@@ -347,6 +356,8 @@ Typen: 1:1, 1:n, n:1, n:m
 | 98761234 | J.      | Herder | 1744|1803|
 | 55652008 | J.      | Smith  | 1744|1803|
 | 11223344 | J.-J.   |Rousseau| 1712|1778|
+
+(= Abhängigkeit der Attribute vom Primärschlüssel)
 
 </small>
 
@@ -385,6 +396,7 @@ Typen: 1:1, 1:n, n:1, n:m
 |-------------|-----------------------------|
 |1242829340229|Das kommunistische Manifest  |
 |1534932829103|Bildung der Menschheit       |
+|...|...            | 
 
 <br/>
 
@@ -392,16 +404,56 @@ Typen: 1:1, 1:n, n:1, n:m
 |----------|---------|--------|-----|----|
 | 19283746 | J.      | Herder | 1744|1803|
 | 98761234 | J.      | Herder | 1744|1803|
+| ... | ...      | | | |
 
 <br/>
-Autorschaftstabelle
 
 | GND      | ISBN        |
 |----------|-------------|
 | 19283746 |1242829340229|
 | 98761234 |1534932829103|
+| ... | ... |
 
 </small>
+
+
+--
+## Dritte Normalform
+
+<small>
+
+| Verlags-ID | Name     | PLZ   | Ort       |
+|----------|------------|-------|-----------|
+| ABC123   | De Gruyter | 10785 | Berlin    |
+| CDE456   | Metzler    | 70182 | Stuttgart |
+| FGH789   | transcript | 33602 | Bielefeld |
+
+</small>
+
+
+--
+## Dritte Normalform
+
+<small>
+
+| Verlags-ID | Name     | PLZ   |
+|----------|------------|-------|
+| ABC123   | De Gruyter | 10785 |
+| CDE456   | Metzler    | 70182 |
+| FGH789   | transcript | 33602 |
+
+<br/>
+
+| PLZ   | Ort       |
+|-------|-----------|
+| 10785 | Berlin    |
+| 70182 | Stuttgart |
+| 33602 | Bielefeld |
+
+(Indirekte Abhängigkeit aufeglöst)
+
+</small>
+
 
 
 --
@@ -524,14 +576,15 @@ WHERE TITEL=="Faust"
 <br/>
 <pre>
 <code>
-SELECT TITEL FROM Buecher
+SELECT TITEL, JAHR FROM Buecher
 WHERE GND=="98765"
 </code>
 </pre>
 <br/>
-* Zeige die Spalten "name" und "geburt" an;
-* aus der Tabelle "autoren";
-* und zwar für diejenigen Einträge, <br/>bei denen "geburt" größer als 1700 ist.
+* Zeige die Spalten "Titel" und "Jahr" an;
+* aus der Tabelle "Buecher";
+* und zwar für den Eintrag, <br/>der die GND 98765 hat.
+
 
 
 
@@ -544,28 +597,17 @@ WHERE GND=="98765"
 * Library: sqlite3
 * Dokumentation: https://docs.python.org/3.7/library/sqlite3.html
 
-
 --
 ## Beispiel in LibreOffice Base
-<br/>
-* Domäne / Anforderungen <!-- .element: class="fragment" data-fragment-index="1" -->
-    * Beziehungen zwischen Figuren in Theaterstücken
-* Konzeptuelles Datenmodell (ER-Modell) <!-- .element: class="fragment" data-fragment-index="2" -->
-    * Entitäten: Figuren, Szenen
-    * Relation: Anwesenheit von F in S
-* Logisches Datenmodell (Tabellen) <!-- .element: class="fragment" data-fragment-index="3" -->
-    * Figuren (Name, Geschlecht, Status
-    * Szenen (Aktnummer, Szenennummer)
-    * Relation (Szene, Figur)
-* Implementierung <!-- .element: class="fragment" data-fragment-index="4" -->
-    * hier in Libre Office Base
-
---
 <img height="550" data-src="img/E05/base.png"></img>
 
 --
 ## MySQL Workbench
 <img height="500" data-src="img/E05/mysql-workbench.png"></img>
+
+--
+## Wikidata SPARQL Endpoint
+<a href="https://query.wikidata.org/#SELECT%20%3Fcountry%20%3FcountryLabel%20%3FcapitalLabel%20%0A%20%20%20WHERE%20%7B%0A%20%20%20%20%20wd%3AQ458%20wdt%3AP150%20%3Fcountry.%20%20%20%23%20European%20Union%0A%20%20%20%20%20OPTIONAL%7B%20%3Fcountry%20wdt%3AP36%20%3Fcapital.%20%7D%0A%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22de%22.%20%7D%0A%7D"><img height="500" data-src="img/E05/wikidata.png"></img></a>
 
 
 
