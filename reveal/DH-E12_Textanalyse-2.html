@@ -30,14 +30,15 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <body>
 <div class="reveal">
 <div class="slides">
-<section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8" data-background-image="img/basics/uni-trier-mini.png" data-background-size="50px" data-background-position="top right">
+<section data-markdown="" data-separator="^\n-\n" data-separator-vertical="^\n--\n" data-charset="utf-8" data-background-image="img/basics/uni-trier-mini.png" data-background-size="50px" data-background-position="top right">
 <script type="text/template">
 
+<br/>
 ## Quantitative Textanalyse 2: Maschinelles Lernen
 <hr/>
 <br/>
 <br/>Vorlesung *Einführung in die Digital Humanities*
-<br/>MSc Digital Humanities | Wintersemester 2018/19
+<br/>MSc Digital Humanities | Wintersemester 2019/20
 <br/>
 <br/>Prof. Dr. Christof Schöch
 <br/>
@@ -46,7 +47,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <br/><img height="50" data-src="img/basics/uni-trier.png">
 
 
----
+-
 # Einstieg
 
 --
@@ -54,34 +55,34 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 <small>
 
-* 23.10.: Digital Humanities im Überblick
-* 30.10.: Digitalisierung: Text und Bild
-* 06.11.: Grundbegriffe des Programmierens
-* 13.11.: Datenmodellierung 1: Modellierung
-* 20.11.: Datenmodellierung 2: Datenbanken
-* 27.11.: Datenmodellierung 3: Text, Markup, XML
-* 04.12.: Digitale Edition
-* 11.12.: Geschichte der Digital Humanities
-* 18.12.: Informationsvisualisierung
-* 22.12.-2.1.: *Weihnachtspause*
-* 08.01.: Computerlinguistik / Natural Language Processing
-* 15.01.: Quantitative Analyse 1: Stilometrie
-* 17.01.: **Quantitative Analyse 2: Superv. Machine Learning**
-* 29.01.: Open Humanities
-* 05.02.: Klausurtermin
+* 29.10.: Digital Humanities im Überblick
+* 05.11.: Digitalisierung: Text und Bild
+* 12.11.: Grundbegriffe des Programmierens
+* 19.11.: Datenmodellierung 1: Modellierung
+* 26.11.: Datenmodellierung 2: Datenbanken
+* 03.12.: Datenmodellierung 3: Text, Markup, XML
+* 10.12.: Digitale Edition
+* 17.12.: Geschichte der Digital Humanities
+* 21.12.-5.1.: *Weihnachtspause*
+* 07.01.: Informationsvisualisierung
+* 14.01.: Natural Language Processing
+* 21.01.: Quantitative Analyse 1: Stilometrie
+* **28.01.: Quantitative Analyse 2: Superv. Machine Learning**
+* 04.02.: Open Humanities
+* 11.02.: Klausurtermin
 
 </small>
 
 --
 ## Sitzungsüberblick
-<br/>
 1. Machine Learning (ML)
-2. Unüberwachtes ML: Verfahren
+2. Überwachtes ML: Einstieg
 3. Überwachtes ML: Anwendungsbeispiel
 4. Überwachtes ML: verschiedene "Classifier"
+5. Was ist Deep Learning?
 
 
----
+-
 # 1. Machine Learning
 
 --
@@ -98,37 +99,27 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 
 
-
----
-# 2. Unüberwachtes ML: Verfahren
-
+-
+# 2. Überwachtes ML: Einstieg
 
 --
-## Cluster-Analyse 
-<br/>
-<img height="500" data-src="img/E12/stylometry_theatre-classique.png"></img>
-<br/>(Stilometrie)
+## Szenario: Fahrradverkauf
+* Wie legen Sie fest, was ein angemessener Preis für Ihr Fahrrad ist?
+* Marktanalyse: andere Fahrradverkäufe
+* Merkmale der Räder und Preis
 
 --
-## Principal Components Analysis
-<br/>
-<img height="500" data-src="img/E12/pca_zeta-terms.png"></img>
-<br/>(Dimensionalitätsreduktion)
+## Daten: Merkmale und Preise
 
---
-## Principal Components Analysis
-<img height="500" data-src="img/E12/pca-3d.gif"></img>
-<br/>(Dimensionalitätsreduktion; <br/>Quelle: http://www.gettinggeneticsdone.com/2011/10/new-dimension-to-principal-components_27.html
+|Farbe|Gänge| Typ    |Preis|
+|-----|-----|--------|-----|
+|blau | 8   | MTB    | 150 |
+|grün | 3   | City   |  95 |
+|rot  | 14  | Rennrad|  85 |
 
 
---
-## Topic Modeling
-<p><a href="http://signsat40.signsjournal.org/topic-model/#/model/grid"><img height="500" data-src="img/E12/signs-at-forty.png"></img></a></p>
-<p>Signs at 40</p>
-
-
----
-# 3. Überwachtes ML (Klassifikation): Anwendungsbeispiel
+-
+# 3. Überwachtes ML: Anwendungsbeispiel
 
 --
 ## Projektseminar: Albencover
@@ -142,7 +133,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 --
 ## Prototypischer Ablauf
-<br/>
 1. Vorbereitung (Gegenstand, Fragestellung) <!-- .element: class="fragment" data-fragment-index="1" -->
 2. Datensammlung erstellen  <!-- .element: class="fragment" data-fragment-index="2" --> 
 3. Annotieren nach Klassen (Teil) <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -154,7 +144,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 --
 ## (1) Vorbereitung
-<br/>
 * Annahme: Musiker sind Künstler, denen auch die künstlerische Gestaltung ihrer Albumcovers wichtig ist <!-- .element: class="fragment" data-fragment-index="1" --> 
 * Hypothese: Es gibt einen Zusammenhang zwischen Musikrichtung und Cover Art <!-- .element: class="fragment" data-fragment-index="2" -->
 * Aufgabe: Albencover nach Musikrichtung klassifizieren <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -163,7 +152,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 --
 ## (2) Datensammlung erstellen
-<br/>
 * Datenquelle: musicbrainz.org, Abruf über API <!-- .element: class="fragment" data-fragment-index="1" -->
 * Struktur: Fünf Genres<br/>Rock, Pop, Electronic, Hip-Hop, Country <!-- .element: class="fragment" data-fragment-index="2" -->
 * Umfang: 5 x 3.000 = 15.000 Albumcover <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -180,13 +168,11 @@ Quelle: https://musicbrainz.org/
 
 --
 ## (3) Annotieren nach Klassen
-<br/>
 * Jedes Album wird einer Musikrichtung zugeordnet
 * Wir übernehmen die Zuordnung von Musicbrainz
 
 --
 ## (4) Merkmale generieren 
-<br/>
 * Einfach <!-- .element: class="fragment" data-fragment-index="1" -->
     * Dominante Farben (Histogramm des HSV-Farbraums)
     * Sättigung und Helligkeit (HSV-Farbraum)
@@ -198,12 +184,10 @@ Quelle: https://musicbrainz.org/
 
 --
 ## (5) Merkmals-Matrix
-<br/>
 <a href="img/E12/musicovers-matrix.png"><img height="500" data-src="img/E12/musicovers-matrix.png"></img></a>
 
 --
 ## (5) Trainingsphase
-<br/>
 * Ein Teil der gelabelten Daten (bspw. 90%) zum "Trainieren"  <!-- .element: class="fragment" data-fragment-index="1" -->
 * Algorithmus "lernt" einen Zusammenhang zwischen Merkmalen und Klassen <!-- .element: class="fragment" data-fragment-index="2" -->
 * Verschiedene "Classifier" mit ihren Parametern <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -211,7 +195,6 @@ Quelle: https://musicbrainz.org/
 
 --
 ## (6) Evaluationsphase
-<br/>
 * Rest der Daten (10%) zur Evaluation <!-- .element: class="fragment" data-fragment-index="1" -->
 * Vergleich der tatsächlichen Klasse mit der vom Algorithmus ernmittelten Klasse <!-- .element: class="fragment" data-fragment-index="2" -->
 * F-Score <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -226,21 +209,19 @@ Quelle: https://musicbrainz.org/
 
 --
 ## 7. Anwendungsphase
-<br/>
 * Entfällt in diesem Beispiel, weil alle Daten gelabelt sind
 * Man könnte jetzt aber für weitere Alben Genrelabels vergeben
 
 --
 ## 8. Interpretation der Ergebnisse
-<br/>
 * Wie stark ist der angenommene<br/> Zusammenhang Cover / Genre?  <!-- .element: class="fragment" data-fragment-index="1" -->
 * Gibt es Unterschiede zwischen den Genres? <!-- .element: class="fragment" data-fragment-index="2" -->
 * Sind die Klassen wirklich disjunkt? <!-- .element: class="fragment" data-fragment-index="3" -->
 * Welche Merkmale sind entscheidend? <!-- .element: class="fragment" data-fragment-index="4" -->
 
 
----
-# 3. Verschiedene "Classifier"
+-
+# 4. Verschiedene "Classifier"
 
 --
 ## Classifier: k-nn
@@ -253,24 +234,34 @@ Quelle: https://musicbrainz.org/
 <p><small>Bildquelle: "A Linear Support Vector Machine", 2014: https://randomforests.wordpress.com/2014/01/29/a-linear-support-vector-machine/</small></p>
 
 --
-## Classifier: NSC
-<p><a href="img/E12/nsc.jpeg"><img height="450" data-src="img/E12/nsc.jpeg"></img></a></p>
-<p><small>Quelle: Struyf, Jan; Dobrin, Seth; Page, David: "Combining gene expression, demographic and clinical data in modeling disease: A case study of bipolar disorder and schizophrenia", https://www.researchgate.net/figure/Illustration-of-the-a-support-vector-machines-b-nearest-shrunken-centroids-c_fig1_23459323, Lizenz <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a></small></p>
-
---
 ## Classifier: Decision Tree
 <p><a href="img/E12/decision_tree.jpg"><img height="450" data-src="img/E12/decision_tree.jpg"></img></a></p>
 <p><small>Quelle: Struyf, Jan; Dobrin, Seth; Page, David: "Combining gene expression, demographic and clinical data in modeling disease: A case study of bipolar disorder and schizophrenia", https://www.researchgate.net/figure/Illustration-of-the-a-support-vector-machines-b-nearest-shrunken-centroids-c_fig1_23459323, Lizenz <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a></small></p>
 
 
+
+
+-
+# 5. Deep Learning
+
 --
-## Vier Classifier
-<p><a href="img/E12/four-classifiers.jpeg"><img height="450" data-src="img/E12/four-classifiers.jpeg"></img></a></p>
-<p><small>Quelle: Struyf, Jan; Dobrin, Seth; Page, David: "Combining gene expression, demographic and clinical data in modeling disease: A case study of bipolar disorder and schizophrenia", https://www.researchgate.net/figure/Illustration-of-the-a-support-vector-machines-b-nearest-shrunken-centroids-c_fig1_23459323, Lizenz <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a></small></p>
+## Was ist Deep Learning?
+* Deep Learning: ML mit "deep artificial neural networks" <!-- .element: class="fragment" data-fragment-index="1" -->
+* Künstliche neuronale Netze: modellieren Verhalten von Nervenzellen <!-- .element: class="fragment" data-fragment-index="2" -->
+* "deep": viele verborgene Schichten <!-- .element: class="fragment" data-fragment-index="3" -->
+* Berechnung läuft häufig auf GPUs <!-- .element: class="fragment" data-fragment-index="4" -->
+* erfordert sehr große Datensätze <!-- .element: class="fragment" data-fragment-index="5" -->
+* nützlich bei komplexen Zusammenhängen zwischen Input und Output <!-- .element: class="fragment" data-fragment-index="6" -->
+* Anwendungsbereiche: Schach, Go, Spracherkennung, autonomes Fahren, uvm.  <!-- .element: class="fragment" data-fragment-index="7" -->
+
+--
+##Einfaches neuronales Netz
+<img height="400" data-src="img/E12/neural-networks.png"></img>
+<br/>
+<small>(Source: User Chrislb, https://commons.wikimedia.org/wiki/File:MultiLayerNeuralNetworkBigger_english.png, [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/deed.en))</small>
 
 
-
----
+-
 # Abschluss
 
 --
@@ -279,15 +270,12 @@ Quelle: https://musicbrainz.org/
 --
 ## Lektürehinweise
 <small>
-<br/>
+    
 * Christof Schöch, "Quantitative Analyse", in: *Digital Humanities: Eine Einführung*. Hrsg. von Fotis Jannidis, Hubertus Kohle, Malte Rehbein. Stuttgart: Metzler.
 <br/>
 <br/>
 **Weitere Empfehlungen**
-* Blei, D. M. (2012). "Probabilistic topic models". In: _Communications of the ACM_, 55(4): 77–84. http://www.cs.princeton.edu/~blei/papers/Blei2012.pdf
-<br/>
-<br/>
-**Darüber hinaus**
+* John D. Kelleher. *Deep Learning*. Cambridge MA: MIT Press, 2019.
 * Alpaydin, E. (2010). _Introduction to Machine Learning_. 2nd ed. Cambridge, Mass: MIT Press.
 * Ramsay, Stephen (2011). _Reading Machines : Toward an Algorithmic Criticism_. Urbana  Ill.: University of Illinois Press.
 
@@ -301,12 +289,12 @@ Quelle: https://musicbrainz.org/
 * Vorbereitung: "Informationen zu Open Access"<br/>(mit den Unterpunkten im Menü):<br/> http://open-access.net/informationen-zu-open-access/
 
 
----
+-
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>Christof Schöch, 2018
+<br/>Christof Schöch, 2020
 <br/>http://www.christof-schoech.de
 <br/>
 <hr/>
