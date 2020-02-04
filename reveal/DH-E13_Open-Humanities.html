@@ -30,7 +30,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <body>
 <div class="reveal">
 <div class="slides">
-<section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8" data-background-image="img/basics/uni-trier-mini.png" data-background-size="50px" data-background-position="top 10px right 10px">
+<section data-markdown="" data-separator="^\n-\n" data-separator-vertical="^\n--\n" data-charset="utf-8" data-background-image="img/basics/uni-trier-mini.png" data-background-size="50px" data-background-position="top 10px right 10px">
 <script type="text/template">
 <br/>
 ## Open Humanities
@@ -42,14 +42,14 @@ Vorlesung *Einführung in die Digital Humanities*
 <br/>
 Prof. Dr. Christof Schöch
 <br/>
-Wintersemester 2017/18
+Wintersemester 2019/20
 <br/>
 <br/>
 <hr/>
 <img height="50" data-src="img/basics/uni-trier.png"></img>
 
 
----
+-
 # Einstieg
 
 --
@@ -57,56 +57,58 @@ Wintersemester 2017/18
 
 <small>
 
-* 23.10.: Digital Humanities im Überblick
-* 30.10.: Digitalisierung: Text und Bild
-* 06.11.: Grundbegriffe des Programmierens
-* 13.11.: Datenmodellierung 1: Modellierung
-* 20.11.: Datenmodellierung 2: Datenbanken
-* 27.11.: Datenmodellierung 3: Text, Markup, XML
-* 04.12.: Digitale Edition
-* 11.12.: Geschichte der Digital Humanities
-* 18.12.: Informationsvisualisierung
-* 22.12.-2.1.: *Weihnachtspause*
-* 08.01.: Computerlinguistik / Natural Language Processing
-* 15.01.: Quantitative Analyse 1: Stilometrie
-* 17.01.: Quantitative Analyse 2: Superv. Machine Learning
-* 29.01.: **Open Humanities**
-* 05.02.: Klausurtermin
+* 29.10.: Digital Humanities im Überblick
+* 05.11.: Digitalisierung: Text und Bild
+* 12.11.: Grundbegriffe des Programmierens
+* 19.11.: Datenmodellierung 1: Modellierung
+* 26.11.: Datenmodellierung 2: Datenbanken
+* 03.12.: Datenmodellierung 3: Text, Markup, XML
+* 10.12.: Digitale Edition
+* 17.12.: Geschichte der Digital Humanities
+* 21.12.-5.1.: *Weihnachtspause*
+* 07.01.: Informationsvisualisierung
+* 14.01.: Natural Language Processing
+* 21.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
+* 28.01.: Quantitative Analyse 2: Superv. Machine Learning
+* **04.02.: Open Humanities**
+* 11.02.: Klausurtermin
+
 
 </small>
 
 --
 ## Sitzungsüberblick
-<br/>
 1. Was ist mit "open" gemeint?
 2. Publikationen: Open Access (OA)
 3. Daten: Open Data
 4. Software: Open Source
 5. Lehre: Open Educational Resources (OER)
 
+--
+## Motivation
+* "Coronavirus is a proving ground for scientific transparency",  [*Quartz*](https://qz.com/1795103/coronavirus-is-a-proving-ground-for-scientific-transparency/)
+* "Sharing research data and findings relevant to the novel coronavirus (nCoV) outbreak", [*Wellcome.ac.uk*](https://wellcome.ac.uk/press-release/sharing-research-data-and-findings-relevant-novel-coronavirus-ncov-outbreak)
+* "Scientists are unraveling the Chinese coronavirus with unprecedented speed and openness", [*Washington Post*](https://www.washingtonpost.com/science/2020/01/24/scientists-are-unraveling-chinese-coronavirus-with-unprecedented-speed-openness/)
+* "'We're opening everything': Scientists share coronavirus data in unprecedented way to contain, treat disease", [*CBC News*](https://www.cbc.ca/news/health/coronavirus-2019-ncov-science-virus-genome-who-research-collaboration-1.5446948)
 
 
----
+-
 # 1. Was ist mit "open" gemeint?
 
 --
 ## Definition von Open Science
-<br/>
 >„Open Science öffnet den wissenschaftlichen Prozess von der ersten Idee bis zur finalen Publikation, um diesen möglichst nachvollziehbar und für alle nutzbar zu machen.“
-
-(Quelle: http://www.openscienceasap.org)
+<br/>(Quelle: http://www.openscienceasap.org)
 
 --
 ## Forschungsprozess
-<br/>
-* Stand der Forschung und Idee
-* Fragestellungen / Hypothesen
-* Datenerhebung und -erschließung
-* (qualitative / quantitative) Datenanalyse
-* Auswertung und Interpretation
-* Publikation der Daten und Ergebnisse
-* und: Vermittlung in der Lehre
-
+* Stand der Forschung und Idee <!-- .element: class="fragment" data-fragment-index="1" -->
+* Fragestellungen / Hypothesen <!-- .element: class="fragment" data-fragment-index="2" -->
+* Datenerhebung und -erschließung <!-- .element: class="fragment" data-fragment-index="3" -->
+* (qualitative / quantitative) Datenanalyse <!-- .element: class="fragment" data-fragment-index="4" -->
+* Auswertung und Interpretation <!-- .element: class="fragment" data-fragment-index="5" -->
+* Publikation der Daten und Ergebnisse <!-- .element: class="fragment" data-fragment-index="6" -->
+* und: Vermittlung in der Lehre <!-- .element: class="fragment" data-fragment-index="7" -->
 
 --
 ## Forschungsprozess
@@ -116,7 +118,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Gegenstände
-<br/>
 * Datenerhebung: „open data“
 * Datenanalyse: Software / „open source“
 * Ergebnisse: Publikationen / „open access“
@@ -124,66 +125,60 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Aspekte
-<br/>
-* Etablierte vs. digitale Abläufe (Digitalisierung) 
-* rechtliche Rahmenbedingungen (Urheberrecht, Lizenzen)
-* technische Rahmenbedingungen (bspw. Standards)
-* Geschäftsmodelle und Modelle von Wissenschaft
-* kostenlos (free) vs. offen (libre)
+* Etablierte vs. digitale Abläufe (Digitalisierung) <!-- .element: class="fragment" data-fragment-index="1" --> 
+* rechtliche Rahmenbedingungen (Urheberrecht, Lizenzen) <!-- .element: class="fragment" data-fragment-index="2" -->
+* technische Rahmenbedingungen (bspw. Standards) <!-- .element: class="fragment" data-fragment-index="3" -->
+* Geschäftsmodelle und Modelle von Wissenschaft <!-- .element: class="fragment" data-fragment-index="4" -->
+* kostenlos (free) vs. offen (libre) <!-- .element: class="fragment" data-fragment-index="5" -->
 
 
----
+
+-
 # 2. Publikationen:<br/>Open Access (OA)
 
 --
 ## Definition (Wikipedia)
-<br/>
 >Open access (OA) refers to research outputs which are distributed online and free of cost or other barriers, and possibly with the addition of a Creative Commons license to promote reuse. Open access can be applied to all forms of published research output, including peer-reviewed and non peer-reviewed academic journal articles, conference papers, theses, book chapters, and monographs.
 
 <br/><small>(Quelle: "Open Access", Wikipedia, https://en.wikipedia.org/wiki/Open_access, Jan. 2019, Lizenz: [CC-BY-SA](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License))</small>
 
 --
 ## Budpest OA Initiative
-<br/>
 >By 'open access' to this literature, we mean its free availability on the public internet, permitting any users to read, download, copy, distribute, print, search, or link to the full texts of these articles, crawl them for indexing, pass them as data to software, or use them for any other lawful purpose, without financial, legal, or technical barriers other than those inseparable from gaining access to the internet itself. The only constraint on reproduction  and distribution, and the only role for copyright in this domain, should be to give authors control over the integrity of their work and the right to be properly acknowledged and cited.
 
 <br/><small>(Quelle: Budapest Open Access Initiative, 2001, https://www.budapestopenaccessinitiative.org/, Lizenz: [CC-BY](https://creativecommons.org/licenses/by/3.0/))
 
 --
 ## Zeitschriftenpublikation: Prozess
-<br/>
-* Forscher/in reicht Artikel bei Zeitschrift ein
-* Zeitschrift organisiert den „peer review“
-* Annahme oder Ablehnung des Artikels
-* Teilweise: Forscher/in bezahlt Publikationsgebühr
-* Forscher/in tritt alle Verwertungsrechte an den Verlag ab
-* Artikel wird von der Zeitschrift lekoriert
-* Zeitschrift veröffentlicht und bewirbt den Artikel
-* Bibliotheken kaufen die Zeitschrift
-* Andere Forscher/innen lesen den Artikel
+* Forscher/in reicht Artikel bei Zeitschrift ein <!-- .element: class="fragment" data-fragment-index="1" -->
+* Zeitschrift organisiert den „peer review“ <!-- .element: class="fragment" data-fragment-index="2" -->
+* Annahme oder Ablehnung des Artikels <!-- .element: class="fragment" data-fragment-index="3" -->
+* Teilweise: Forscher/in bezahlt Publikationsgebühr <!-- .element: class="fragment" data-fragment-index="4" -->
+* Forscher/in tritt alle Verwertungsrechte an den Verlag ab <!-- .element: class="fragment" data-fragment-index="5" -->
+* Artikel wird von der Zeitschrift lekoriert <!-- .element: class="fragment" data-fragment-index="6" -->
+* Zeitschrift veröffentlicht und bewirbt den Artikel <!-- .element: class="fragment" data-fragment-index="7" -->
+* Bibliotheken kaufen die Zeitschrift <!-- .element: class="fragment" data-fragment-index="8" -->
+* Andere Forscher/innen lesen den Artikel <!-- .element: class="fragment" data-fragment-index="9" -->
 
 --
 ##Zeitschriftenpublikation: Problem
-<br/>
-* Die Forscher/innen machen die meiste Arbeit (Forschen, Schreiben, Review)
-* Die Forscher/innen werden mit Steuergeldern bezahlt
-* Die Publikationsgebühr wird mit Steuergeldern bezahlt
-* Die Zeitschriften werden mit Steuergeldern gekauft
-* Die Steuerzahler/innen haben keinen Zugang zu den Artikeln
-* Andere Menschen, in vielen Ländern, haben keinen Zugang
-* Manche Verlage verdienen sehr viel Geld (Elsevier: 36% Gewinnmarge)
+* Die Forscher/innen machen die meiste Arbeit (Forschen, Schreiben, Review) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Die Forscher/innen werden mit Steuergeldern bezahlt <!-- .element: class="fragment" data-fragment-index="2" -->
+* Die Publikationsgebühr wird mit Steuergeldern bezahlt <!-- .element: class="fragment" data-fragment-index="3" -->
+* Die Zeitschriften werden mit Steuergeldern gekauft <!-- .element: class="fragment" data-fragment-index="4" -->
+* Die Steuerzahler/innen haben keinen Zugang zu den Artikeln <!-- .element: class="fragment" data-fragment-index="5" -->
+* Andere Menschen, in vielen Ländern, haben keinen Zugang <!-- .element: class="fragment" data-fragment-index="6" -->
+* Manche Verlage verdienen sehr viel Geld (Elsevier: 36% Gewinnmarge) <!-- .element: class="fragment" data-fragment-index="7" -->
 
 --
 ## Open Access als Lösung?
-<br/>
-* Die wichtigsten Schritte werden vorab finanziert (staatlich oder privat)
-* Alle Menschen haben Zugang zu wiss. Erkenntnis
-* Zugangsbeschränkung ist zusätzlicher Aufwand
-* Aber: auch Korrekturlesen, Layouten, Drucken/Server kosten Geld
+* Die wichtigsten Schritte werden vorab finanziert (staatlich oder privat) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Alle Menschen haben Zugang zu wiss. Erkenntnis <!-- .element: class="fragment" data-fragment-index="2" -->
+* Zugangsbeschränkung ist zusätzlicher Aufwand <!-- .element: class="fragment" data-fragment-index="3" -->
+* Aber: auch Korrekturlesen, Layouten, Drucken/Server kosten Geld <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 ## Paradigmenwechsel
-<br/>
 * **Print**: *Erst filtern, dann publizieren*<br/>(Kosten für Herstellung und Distribution sind hoch)
 <br/><br/>
 * **Digital**: *Publish first, filter later*<br/>(Publikation is billig, aber Aufmerksamkeit ist knapp) 
@@ -191,7 +186,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Open Access: Varianten
-<br/>
 * Green Open Access: Selbst-Archivierung
 * Gold Open Access: OA-Zeitschrift
 <br/><br/><img height="200" data-src="img/E13/oa.png" align="center"></img>
@@ -199,7 +193,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Green Open Access
-<br/>
 * Artikel werden klassisch publiziert (print/digital) 
 * Parallel passiert ein OA-Deposit: 
     * Artikel wird in Repository online publiziert
@@ -209,7 +202,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Gold Open Access
-<br/>
 * Artikel wird direkt in einer Open Access-Zeitschrift
 * Häufig: „Article Processing Charges“ (Publikationsgebühr) statt Subskriptionsgebühr (DEAL: durch nationale Pauschale abgedeckt)
 * Neue Geschäftsmodelle: 
@@ -218,7 +210,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Creative Commons-Lizenzen (CC)
-<br/>
 * 2001 gegründet von Lawrence Lessig
 * Lizenzen beschreiben die anderen eingeräumten Rechte
 * Ein einfaches, standardisiertes Mittel, um unter präzisen Bedingungen die Nutzung von intellektuellen / künstlerischen Werken zu gestatten
@@ -228,7 +219,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Lawrence Lessig
-<br/>
 <img height="500" data-src="img/E13/lessig.jpg"></img>
 <small>(Quelle: Joi Ito, "Lawrence Lessing in May 2017", https://en.wikipedia.org/wiki/Lawrence_Lessig#/media/File:Lawrence_Lessig_May_2017.jpg, Lizenz: [CC-BY 2.0](https://creativecommons.org/licenses/by/2.0)</small>
 
@@ -241,11 +231,8 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 * CC BY-NC (Non-Commercial): Wie CC BY-SA, zudem keine kommerzielle Nutzung
 * CC BY-ND (No Derivatives): Wie CC-BY-SA, zudem keine Änderungen
 
-
-
 --
 ## Weitere Themen: Wissenschaftskommunikation
-<br/>
 * Bloggen: Alternative Publikationsform
     * Kleinere Beiträge aus dem Forschungsalltag
     * Selbstpublikation (kein Filter, keine Qualitätssicherung)
@@ -256,10 +243,8 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
     * persönliche Perspektive, Diskussionen
     * "Digitale Identität" und Echoboden 
 
-
 --
 ## Weitere Themen: Impact
-<br/>
 * Klassisches Modell
     * Maße für Wichtigkeit einer Publikation: Anzahl der Zitationen durch andere Forscher/innen
     * Verkaufszahlen (Bücher)
@@ -274,7 +259,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Open Access in den DH
-<br/>
 * *[Digital Scholarship in the Humanities](https://academic.oup.com/dsh)* (EADH/ADHO, OUP): Subskription / OA
 * *[Digital Humanities Quarterly](http://www.digitalhumanities.org/dhq/)* (ADHO): Open Access
 * *[Journal of Digital Humanities](http://journalofdigitalhumanities.org/)*: OA (post-publ. peer review)
@@ -284,25 +268,23 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Open Access-Publikationen finden
-<br/>
 * DOAJ (Directory of Open Access Journals): http://doaj.org/
 * OpenDOAR (Directory of Open Access Repositories): http://www.opendoar.org/find.php
 * BASE (Bielefeld Academic Seach Engine): https://de.base-search.net/
 
 
----
+
+-
 # 3. Daten:<br/>Open Data
 
 --
 ## Definition
-<br/>
 >Open Data bedeutet die freie Verfügbar- und Nutzbarkeit von, meist öffentlichen, Daten. Sie beruht auf der Annahme, dass vorteilhafte Entwicklungen unterstützt werden wie Open Government, wenn Daten für jedermann frei zugänglich gemacht werden und damit mehr Transparenz und Zusammenarbeit ermöglichen. Dazu verwenden die Ersteller Lizenzmodelle, die auf Copyright, Patente oder andere proprietäre Rechte weitgehend verzichten.
 
 <br/><small>(Quelle: Artikel "Open Data", *Wikipedia*, http://de.wikipedia.org/Open_Data)</small>
 
 --
 ## Begrifflichkeit
-<br/>
 * Open Data in Science
 * Open Government Data
 * Linked Open Data
@@ -310,7 +292,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Warum "Open Data"?
-<br/>
 * Transparenz ("accountability")
 * Reproduzierbarkeit
 * Kollaboration
@@ -320,11 +301,10 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 --
 ## FAIR Data Principles
 <img height="200" data-src="img/E13/FAIR.jpg"></img>
-<br/>
-* **F**indable: bspw., durch Metadaten, Katalogeinträge
-* **A**ccessible: bspw., ohne technische Hürden (Repository)
-* **I**nteroperable: bspw., offene Standards und Formate
-* **R**e-usable: bspw., offene Lizenz; Dokumentation
+* **F**indable: bspw., durch Metadaten, Katalogeinträge <!-- .element: class="fragment" data-fragment-index="1" -->
+* **A**ccessible: bspw., ohne technische Hürden (Repository) <!-- .element: class="fragment" data-fragment-index="2" -->
+* **I**nteroperable: bspw., offene Standards und Formate <!-- .element: class="fragment" data-fragment-index="3" -->
+* **R**e-usable: bspw., offene Lizenz; Dokumentation <!-- .element: class="fragment" data-fragment-index="4" -->
 <br/><br/>
 
 <small>
@@ -333,25 +313,22 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Open Data: Rechtliches
-<br/>
-* Datenbanken sind rechtlich geschützt
-* Nach Urheberrecht: Besondere Struktur der Datenbank; "Schöpfungshöhe” = persönliche kreative Leistung
-* Nach Datenbankherstellerrecht: “wesentliche Investition” (fast immer der Fall)
-* Hinweise
+* Datenbanken können rechtlich geschützt sein <!-- .element: class="fragment" data-fragment-index="1" -->
+    * Nach Urheberrecht: Struktur der Datenbank; "Schöpfungshöhe” = persönliche kreative Leistung
+    * Nach Datenbankherstellerrecht: “wesentliche Investition” (fast immer der Fall)
+* Hinweise <!-- .element: class="fragment" data-fragment-index="2" -->
     * Beides gilt auch, wenn die Inhalte urheberrechtsfrei sind!
     * Ziel ist der Investitionsschutz 
-    * Ausnahmen für wissenschaftliche, nicht-kommerzielle Zwecke
+    * Ausnahmen für wissenschaftliche, nicht-kommerzielle Zwecke<br/>(Wissenschafts-Urhebergesetz, 2018; EU-Direktive 2019)
 
 --
 ## Open Data: Lizenzen
-<br/>
 * Lizenzen sind für Software oder Publikationen entwickelt worden
 * Es gibt spezielle Lizenzen für Daten: Open Data Commons: ODC-Lizenzen, http://opendatacommons.org/licenses
 * Aber auch Creative-Commons-Lizenzen sind geeignet und besser verständlich
 
 --
 ## Open Data: Standards
-<br/>
 * Standards: "codified rules and guidelines for the creation, description and management of digital resources" (Gill and Miller, 2002)
 * Beispiele
     * Zeichenkodierung: UTF-8 / Unicode 
@@ -387,7 +364,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Open Data: Initiativen
-<br/>
 * Open Data Foundation: http://odaf.org/
 * Open Knowledge Foundation: http://oknf.org
 * Linguistic Linked Open Data: http://linguistic-lod.org/
@@ -409,12 +385,11 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 </small> 
 
----
+-
 # 4. Software:<br/>Open Source
 
 --
 ## Open vs. Free Software
-<br/>
 >**open source**: Quellcode liegt in einer für den Menschen lesbaren Form vor darf beliebig kopiert, verbreitet und genutzt werden darf verändert und in der veränderten Form weitergegeben werden (Quelle: Art. “Open Source”, Wikipedia, https://de.wikipedia.org/wiki/Open_Source)
 
 >**free software**: "When we call software free, we mean that it respects the users' essential freedoms: the freedom to run it, to study and change it, and to redistribute copies with or without changes. This is a matter of freedom, not price, so think of free speech, not free beer." (Richard Stallman)
@@ -422,17 +397,16 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Lizenzen
-<br/>
-* Proprietäre Lizenzen (nicht open source)
+* Proprietäre Lizenzen (nicht open source) <!-- .element: class="fragment" data-fragment-index="1" -->
     * Typisch: EULA = End-User License Agreement)
     * Recht, die Software zu nutzen (aber nicht Besitz der Software)
     * Strenge Bedingungen
-* Offene Lizenzen
+* Offene Lizenzen <!-- .element: class="fragment" data-fragment-index="2" -->
     * „permissive licenses“
     * der Code kann beliebig verwendet werden
     * auch unter einer restriktiven Lizenz weitergegeben werden
     * Beispiel: MIT license
-* „copyleft“ Lizenzen
+* „copyleft“ Lizenzen <!-- .element: class="fragment" data-fragment-index="3" -->
     * Code kann beliebig verwendet werden (nutzen, ändern)
     * muss unter den gleichen Bedingungen weitergegeben werden 
     * Beispiel: GPL
@@ -452,32 +426,28 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Initiativen
-<br/>
 * Free Software Foundation (FSF, seit 1985!):<br/>http://www.fsf.org/
 * Open Source Initiative (OSI):<br/>http://opensource.org/
 
 --
 ## Code-Repositories
-<br/>
 * **GitHub**, https://github.com/
 * Sourceforge, http://sourceforge.net/
 * Bitbucket (Atlassian): https://bitbucket.org/
 * Google Code, https://code.google.com/
 
 
----
+-
 # 5. Lehre:<br/>Open Educational Resources (OER)
 
 --
 ## Definition: OER
-<br/>
 >Open educational resources (OER) are freely accessible, openly licensed text, media, and other digital assets that are useful for teaching, learning, and assessing as well as for research purposes. [...] The term OER describes publicly accessible materials and resources for any user to use, re-mix, improve and redistribute under some licenses.
 
 <small>Quelle: "Open Educational Resources", Wikipedia, https://en.wikipedia.org/wiki/Open_educational_resources</small>
 
 --
 ## Was sind MOOCs
-<br/>
 * „Massive Open Online Courses“
 * Mehrere Komponenten der Wissensvermittlung
 * Video-Vorträge mit Zwischenfragen
@@ -487,7 +457,6 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 
 --
 ## Aspekte
-<br/>
 * Man erreicht sehr viele Studierende
 * Extrem hohe „Abbrecherquote“ (90-98%)
 * Überwiegend kostenlos, aber nur teils „offen“ lizensiert
@@ -505,36 +474,33 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 * CLARIN „Teaching and Learning Materials Collection“ (Linguistik): https://fedora.clarin-d.uni-saarland.de/hub/
 
 
----
+-
 # Abschluss
 
 --
 ## Bilanz (Aspekte)
-<br/>
-* Ökonomisch: 
+* Ökonomisch:  <!-- .element: class="fragment" data-fragment-index="1" -->
     * Wie finanzieren, wenn Nutzung kostenfrei ist
     * positive makroökonomische Effekte (Innovation, etc.)
-* Politisch: 
+* Politisch:  <!-- .element: class="fragment" data-fragment-index="2" -->
     * öffentlich finanziert, öffentlich zugänglich
     * Entwicklungs- und Bildungspolitik 
 
 --
 ## Bilanz (Aspekte)
-<br/>
-* Rechtlich: 
+* Rechtlich:  <!-- .element: class="fragment" data-fragment-index="3" -->
     * Urheberrecht wahren, wenn alles frei publiziert wird 
     * Ausgleich der Interessen von Anbietern und Nutzern
-* Praktisch: 
+* Praktisch:  <!-- .element: class="fragment" data-fragment-index="4" -->
     * Filtern, wenn alles publiziert wird (Aufmerksamkeitsökonomie) 
 
 --
 ## Bilanz (Aspekte)
-<br/>
-* Mediengeschichtlich: 
+* Mediengeschichtlich:  <!-- .element: class="fragment" data-fragment-index="5" -->
     * jede Medienrevolution bringt neue Umgangsweisen mit Wissen mit sich: konservativ oder progressiv
     * aus vergangenen Medienrevolutionen lernen
     * aus anderen Bereichen lernen (Stichwort DRM bei Musik)
-* Wissenschaftlich: 
+* Wissenschaftlich:  <!-- .element: class="fragment" data-fragment-index="6" -->
     * Ideal der „freien Zirkulation des Wissens“
     * „Zwerge auf den Schultern von Riesen“
     * Kollaborative, internationale Forschung
@@ -560,12 +526,12 @@ https://commons.wikimedia.org/wiki/File:Forschungsprozess.jpg, Lizenz: [CC-BY-SA
 </small>
 
 
----
+-
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>Christof Schöch, 2019
+<br/>Christof Schöch, 2020
 <br/>http://www.christof-schoech.de
 <br/>
 <hr/>
