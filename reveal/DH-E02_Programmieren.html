@@ -39,7 +39,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <hr/>
 <br/>
 <br/>Vorlesung *Einführung in die Digital Humanities*
-<br/>MSc Digital Humanities | Wintersemester 2019/20
+<br/>MSc Digital Humanities | Wintersemester 2020/21
 <br/>
 <br/>
 Prof. Dr. Christof Schöch
@@ -56,21 +56,20 @@ Prof. Dr. Christof Schöch
 
 <small>
 
-* 29.10.: Digital Humanities im Überblick
-* 05.11.: Digitalisierung: Text und Bild
-* **12.11.: Grundbegriffe des Programmierens**
-* 19.11.: Datenmodellierung 1: Modellierung
-* 26.11.: Datenmodellierung 2: Datenbanken
-* 03.12.: Datenmodellierung 3: Text, Markup, XML
-* 10.12.: Digitale Edition
-* 17.12.: Geschichte der Digital Humanities
-* 21.12.-5.1.: *Weihnachtspause*
-* 07.01.: Informationsvisualisierung
-* 14.01.: Natural Language Processing
-* 21.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
-* 28.01.: Quantitative Analyse 2: Superv. Machine Learning
-* 04.02.: Open Humanities
-* 11.02.: Klausurtermin
+* 10.11.: Digital Humanities im Überblick
+* 17.11.: **Grundbegriffe des Programmierens**
+* 24.11.: Digitalisierung: Text und Bild
+* 01.12.: Datenmodellierung 1: Modellierung
+* 08.12.: Datenmodellierung 2: Datenbanken
+* 15.12.: Textkodierung und Digitale Edition
+* 22.12.: Informationsvisualisierung
+* *Weihnachtspause*
+* 05.01.: Geschichte der Digital Humanities
+* 12.01.: Natural Language Processing
+* 19.01.: Grundlagen der Statistik
+* 26.01.: Quantitative Analyse: Maschinelles Lernen
+* 02.02.: Open Access, Open Science
+* letzte Woche: Klausurtermin
 
 </small>
 
@@ -93,10 +92,16 @@ Prof. Dr. Christof Schöch
 --
 ## Typen von Programmiersprachen
 <br/>
-* Assembler-Programmierung ("Maschinensprache")
-* Höhere Programmiersprachen
-    * "kompilierte" Sprachen wie Pascal, C++
-    * "interpretierte" Sprachen wie PHP, Perl oder Python
+* Ausführung immer in "Maschinensprache" <!-- .element: class="fragment" data-fragment-index="1" -->
+* Assembler-Programmierung: sehr nah an der Maschinensprache <!-- .element: class="fragment" data-fragment-index="2" -->
+* "kompilierte" Programmiersprachen <!-- .element: class="fragment" data-fragment-index="3" -->
+    * Pascal, Java, C / C++
+    * Kompilieren zu Assembler, dann in Maschinensprache
+    * mächtig und performant
+* "interpretierte" Sprachen / Skript-Sprachen <!-- .element: class="fragment" data-fragment-index="4" -->
+    * PHP, Perl oder Python
+    * der Interpreter stellt Routinen für die Ausführung bereit
+    * einfache Fehlersuche, weniger performant
 
 --
 ## Beispiel-Sprache: Python
@@ -142,11 +147,6 @@ busnummer = 10 + 3
 * Struktur: "Variable = Ausdruck"
 * alles zusammen ist eine "Anweisung"
 
---
-## Code ausführen
-<br/>
-* Beispiele beobachten mit repl.it:<br/>https://repl.it/@christofs/vorlesung
-* Oder dort ein eingenes "repl" starten:<br/>https://repl.it
 
 --
 ## Umgang mit Variablen
@@ -166,11 +166,15 @@ print(preis)
 ## Datentypen
 <br/>
 * "Zusammenfassung konkreter Wertebereiche und darauf definierten Operationen zu einer Einheit"
-* Beispiele:
+* Beispiele für "Wertebereiche":
     * int ("integer", also ganze Zahlen)
     * float (Gleitkommazahl)
     * bool (Wahrheitswert: True oder False)
     * string (Zeichenkette)
+* Definierte Operationen: 
+    * dazugehörige Methoden 
+    * passende Operatoren
+    * geeignete Funktionen
 
 --
 ## Datentypen
@@ -188,7 +192,7 @@ print(type(alter))
 </pre>
 
 --
-## Datentypen und Operatoren (1)
+## Datentypen und Operatoren / Methoden (1)
 <br/>
 <pre>
 <code>
@@ -254,7 +258,7 @@ print(ergebnis)
 
 
 ---
-# Datenstrukturen und Operatoren
+# 3. Datenstrukturen und Operatoren
 
 --
 ## Datenstrukturen
@@ -475,7 +479,7 @@ else:
 * Bedingung or Bedingung
 
 ---
-# 4. Bausteine eines Skripts
+# 5. Bausteine eines Skripts
 
 --
 ## Abstrakte Ebene: Funktionen
@@ -570,7 +574,13 @@ print(len(wörter))
 
 
 ---
-## 6. "Think like a programmer" -- aber wie?
+# 6. "Think like a programmer" -- aber wie?
+
+
+--
+## Computational Thinking
+<img height="500" data-src="img/E03/computational-thinking.jpg"></img>
+<br/><small>Peter J. Denning &amp; Matti Tedre, <emph>Computational Thinking</emph>, 2019.</small>
 
 --
 ## Aspekte
@@ -596,8 +606,6 @@ print(len(wörter))
 ---
 # Abschluss
 
---
-## Fragen?
 
 --
 ## Lektürehinweise
@@ -609,6 +617,7 @@ print(len(wörter))
 **Weitere Empfehlungen**
 * Bernd Klein, *Python 3-Tutorial*, 2014. https://www.python-kurs.eu/python3_kurs.php
 * *Das Python-Tutorial 3.3*. Read the docs. http://py-tutorial-de.readthedocs.io/de/python-3.3/
+* Peter J. Denning &amp; Matti Tedre, *Computational Thinking*, MIT Press, 2019.
 <br/>
 <br/>
 **Darüber hinaus**
@@ -618,19 +627,13 @@ print(len(wörter))
 
 </small>
 
---
-## Nächste Sitzung
-<br/>
-* 16.11.: Sitzung fällt aus
-* 23.11.: Thema: Datenmodellierung 1: Was ist Modellieren?
-* Vorbereitung: Fotis Jannidis, "Grundlagen der Datenmodellierung" (Kapitel 7 im Lehrbuch)
 
 ---
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>Christof Schöch, 2017
+<br/>Christof Schöch, 2020
 <br/>http://www.christof-schoech.de
 <br/>
 <hr/>
