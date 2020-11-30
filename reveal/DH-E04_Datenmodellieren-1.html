@@ -137,6 +137,18 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 # 2. Modell
 
 --
+## San Francisco Bay: Simulation
+<img height="500" data-src="img/E04/sfbay.jpg"></img>
+<br/><small>(Bildquelle: <a href="https://en.wikipedia.org/wiki/File:USCAE_Bay_Model_-_San_Francisco_Bay_Detail.jpg">Wikipedia</a>, public domain.)</small>
+
+
+--
+## Royal Navy: Planspiel
+<img height="500" data-src="img/E04/royal-navy.jpg"></img>
+<br/><small>(Bildquelle: <a href="https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A13200.jpg">Wikimedia Commons</a>.)</small>
+
+
+--
 ## Modellflugzeug
 <img height="500" data-src="img/E04/GASMODEL_WIKI.jpg"></img>
 <br/><small>(Quelle: <a href="https://en.wikipedia.org/wiki/User:KPWM_Spotter" class="extiw" title="en:User:KPWM Spotter">KPWM Spotter</a> at the <a href="https://en.wikipedia.org/wiki/" class="extiw" title="w:">English language Wikipedia</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=18023167">Link</a>.)</small>
@@ -163,6 +175,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 * Formalisierung (explizit) <!-- .element: class="fragment" data-fragment-index="7" -->
 * Simulation (dynamisch) <!-- .element: class="fragment" data-fragment-index="8" -->
 
+
 --
 ## Modellbegriffe
 <br/>
@@ -172,16 +185,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 * Gegenstandsmodell vs. Prozessmodell <!-- .element: class="fragment" data-fragment-index="2" -->
 * Statistisches Modell vs. Datenmodell <!-- .element: class="fragment" data-fragment-index="3" -->
 
+
 --
 ## Statistisches Modell
 <img height="500" data-src="img/E04/regression.png"></img>
 <br/><small>Quelle: Ryan Heuser, Long Le-Khac: „A Quantitative Literary History of 2,958 Nineteenth-Century British Novels: The Semantic Cohort Method." in: Literary Lab Pamphlet, 4, 2012, S. 31.)</small>
-
---
-## Datenmodell: Definition
-<br/>
->“A data model [...] is an abstract, self-contained, logical definition of the data structures, data operators, and so forth, that together make up the abstract machine with which users interact.” (Data, in Flanders/Jannidis 2016)
-
 
 --
 ## Datenmodell: Beispiel
@@ -194,23 +202,15 @@ start =
       element body {
         element div {
           element head { text },
-          element lg {
-            element l { text }+
+          element p { text }+
           }+
         }
       }
     }
   }
-</code>
+s</code>
 </pre>
 Eine Formulierung eines Datenmodells<br/>(Schema in Relax NG compact syntax)
-
-
-
---
-## Beispiel: OHCO-Diagramm
-<img height="500" data-src="img/E04/xml-tree-structure_poem.png"></img>
-<br/><small>Visuelle Darstellung eines Datenmodells<br/>(Quelle: Quelle: „A gentle introduction to XML“, in: Sperberg-McQueen, C.M.; Burnard, Lou (Hg.), Guidelines for Electronic Text Encoding and Interchange, 2004. http://www.tei-c.org/Vault/P5/1.0.1/doc/tei-p4-doc/html/SG.html, <a href="http://creativecommons.org/licenses/by/3.0/">CC-BY 3.0.</a>)</small>
 
 
 
@@ -221,7 +221,12 @@ Eine Formulierung eines Datenmodells<br/>(Schema in Relax NG compact syntax)
 --
 ## Datenmodellierung: Definition
 <br/>
-> The term “data modeling” in computer science is most typically used in a fairly restrictive sense for the modeling of relational databases, while the digital humanities has a more general understanding of the term: data modeling is the modeling of some segment of the world in such a way to make some aspects computable. (Flanders/Jannidis 2016)
+> The term “data modeling” in computer science is most typically used in a fairly restrictive sense for the modeling of relational databases, while the digital humanities has a more general understanding of the term: data modeling is the [representation] of some segment of the world in such a way to make some aspects computable. (Flanders/Jannidis 2016)
+
+<br/>
+
+
+>“A data model [...] is an abstract, self-contained, logical definition of the data structures, data operators, and so forth, that together make up the abstract machine with which users interact.” (Data, in Flanders/Jannidis 2016)
 
 
 --
@@ -240,7 +245,7 @@ Eine Formulierung eines Datenmodells<br/>(Schema in Relax NG compact syntax)
 <br/>
 1. Bestimmte digitale Kodierung eines bestimmten Briefs <!-- .element: class="fragment" data-fragment-index="1" -->
     * konkrete XML-Datei = (modellierte) Instanz
-2. Elemente mit Eigenschaften und Relationen bei Briefen <!-- .element: class="fragment" data-fragment-index="2" -->
+2. Menge von Elementen mit Eigenschaften und Relationen bei Briefen <!-- .element: class="fragment" data-fragment-index="2" -->
     * konkretes Schema = (logisches) Datenmodell
 3. Eine formale Sprache, mit der die Elemente und Relationen definiert werden können <!-- .element: class="fragment" data-fragment-index="3" -->
     * bspw. Relax NG oder XML = (allgemeines) Metamodell
@@ -290,28 +295,22 @@ Eine Formulierung eines Datenmodells<br/>(Schema in Relax NG compact syntax)
 ## Modell: Term-Dokument-Matrix
 <img height="500" data-src="img/E04/3-tdm.png"></img>
 
---
-## Modell: "Zwischenformat" (DLINA)
-<img height="500" data-src="img/E04/5-zwischenformat.png"></img>
 
 --
 ## Modell: Adjazenzmatrix
 <img height="300" data-src="img/E04/6-adjazenzmatrix.png"></img>
 <br/><small>(Quelle: Trilcke, Peer, „Social Network Analysis (SNA) als Methode einer textempirischen Literaturwissenschaft“. In: Philip Ajouri, Katja Mellmann u. Christoph Rauen (Hg.): Empirie in der Literaturwissenschaft, Münster 2013, S. 201–247, 226.)</small>
 
---
-## Analyse: Soziomatrix
-<img height="400" data-src="img/E04/7-soziomatrix.png"></img>
-<br/><small>(Quelle: Trilcke, Peer, „Social Network Analysis (SNA) als Methode einer textempirischen Literaturwissenschaft“. In: Philip Ajouri, Katja Mellmann u. Christoph Rauen (Hg.): Empirie in der Literaturwissenschaft, Münster 2013, S. 201–247, 226.)</small>
 
 --
 ## Analyse: Replikenverteilung
 <img height="500" data-src="img/E04/8-replikenverteilung.png"></img>
+<br/>Grundlage: TEI-Kodierung
 
 --
-## Analyse: Textähnlichkeit
+## Analyse: Textähnlichkeit 
 <img height="500" data-src="img/E04/4-ähnlichkeit.png"></img>
-
+<br/>Grundlage: Term-Dokument-Matrix
 
 ---
 # Abschluss
@@ -333,6 +332,7 @@ Eine Formulierung eines Datenmodells<br/>(Schema in Relax NG compact syntax)
 **Darüber hinaus**
 * Willard McCarty. *Humanities Computing*. 2005.
 * Richard Jean So. "All Models Are Wrong". In: *PMLA* 132.3, 2017, 668-673.
+* Michael Weisberg. *Simulation and Similarity. Using Models to UNderstand the World*. Oxford UP, 2013. 
 
 
 </small>
