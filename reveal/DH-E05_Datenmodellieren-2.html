@@ -38,7 +38,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <hr/>
 <br/>
 <br/>Vorlesung *Einführung in die Digital Humanities*
-<br/>MSc Digital Humanities | Wintersemester 2019/20
+<br/>MSc Digital Humanities | Wintersemester 2020/21
 <br/>
 <br/>Prof. Dr. Christof Schöch
 <br/>
@@ -48,34 +48,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 
 ---
-# Einstieg
-
-
---
-## Semesterüberblick
-
-<small>
-
-* 29.10.: Digital Humanities im Überblick
-* 05.11.: Digitalisierung: Text und Bild
-* 12.11.: Grundbegriffe des Programmierens
-* 19.11.: Datenmodellierung 1: Modellierung
-* **26.11.: Datenmodellierung 2: Datenbanken**
-* 03.12.: Datenmodellierung 3: Text, Markup, XML
-* 10.12.: Digitale Edition
-* 17.12.: Geschichte der Digital Humanities
-* 21.12.-5.1.: *Weihnachtspause*
-* 07.01.: Informationsvisualisierung
-* 14.01.: Natural Language Processing
-* 21.01.: Quantitative Analyse 1: Stilometrie, Topic Modeling
-* 28.01.: Quantitative Analyse 2: Superv. Machine Learning
-* 04.02.: Open Humanities
-* 11.02.: Klausurtermin
-
-
-</small>
-
---
 ## Sitzungsüberblick
 <br/>
 1. Datenbanken, wie und wozu?
@@ -93,8 +65,9 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <br/>
 * eignen sich zur Organisation stark strukturierter Datenbestände <!-- .element: class="fragment" data-fragment-index="1" -->
 * können mit umfangreichen, detaillierten Datenbeständen befüllt werden <!-- .element: class="fragment" data-fragment-index="2" -->
-* erlauben präzise Suchabfragen auf diesen Beständen <!-- .element: class="fragment" data-fragment-index="3" -->
-* => erfüllen Grundbedürfnisse geisteswiss. Forschung nach Organisation, Speicherung und Abfragen von Informationen <!-- .element: class="fragment" data-fragment-index="4" -->
+* erlauben präzise und effiziente Suchabfragen auf diesen Beständen <!-- .element: class="fragment" data-fragment-index="3" -->
+* erlauben Zugriff und Bearbeitung durch mehrere Nutzer:innen gleichzeitig <!-- .element: class="fragment" data-fragment-index="4" -->
+* => erfüllen Grundbedürfnisse geisteswiss. Forschung nach Organisation, Speicherung und Abfragen von Informationen <!-- .element: class="fragment" data-fragment-index="5" -->
 
 
 --
@@ -202,7 +175,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 --
 ## Entity-Relationship-Modell
 <br/>
-* konzeptuelles Modell: abstrakt
+* konzeptuelles Modell / Datenmodell: abstrakt
 * erfüllt die vier genannten Aufgaben
 * abstrakte Struktur der Daten (nicht die Daten selbst)
 * bspw. in grafischer Notation festgehalten
@@ -266,10 +239,16 @@ Typen: 1:1, 1:n, n:1, n:m
 --
 # (A) Grundideen
 
+
+--
+## Ebenen
+1. Konzeptuelles Datenmodell: abstrakte Struktur und Elemente der Domäne
+2. Logisches Datenmodell: Umsetzung des konzetuellen Models
+
 --
 ## Grundideen des RDM
 <br/>
-* ER-Modell: Entitäten, Attribute, Relationen <!-- .element: class="fragment" data-fragment-index="1" -->
+* Implementiert das ER-Modell: Entitäten, Attribute, Relationen <!-- .element: class="fragment" data-fragment-index="1" -->
 * Jede Klasse von Entität (gleiche Attribute) bekommt eine separate Tabelle <!-- .element: class="fragment" data-fragment-index="2" -->
 * Jeder Eintrag bekommt einen Identifier ("key") <!-- .element: class="fragment" data-fragment-index="3" -->
 * Relationen zwischen Entitäten laufen über die "keys" <!-- .element: class="fragment" data-fragment-index="4" -->
@@ -302,9 +281,9 @@ Typen: 1:1, 1:n, n:1, n:m
 
 --
 ## Normalformen (NF)
-* 1. NF: Jedes Attribut der Relation hat atomare Werte; es gibt keine Wiederholungsgruppen <!-- .element: class="fragment" data-fragment-index="1" -->
-* 2. NF: Attribute sind "voll funktional abhängig" vom (ganzen) Primärschlüssel <!-- .element: class="fragment" data-fragment-index="2" -->
-* 3. NF: Kein Nichtschlüsselattribut ist von einem anderen Nichtschlüsselattribut abhängig <!-- .element: class="fragment" data-fragment-index="3" -->
+* 1. NF: Jedes Attribut der Relation hat atomare Werte; es gibt keine Wiederholungsgruppen
+* 2. NF: Attribute sind "voll funktional abhängig" vom (ganzen) Primärschlüssel
+* 3. NF: Kein Nichtschlüsselattribut ist von einem anderen Nichtschlüsselattribut abhängig
 
 --
 ## Ausgangslage
@@ -331,9 +310,10 @@ Typen: 1:1, 1:n, n:1, n:m
 |1534932829103|An Inquiry into the Nature...| J.    |Smith    |1744|1803|
 |1665229181734|Du contrat social            | J.-J. |Rousseau |1712|1778|
 
-(= Atomisierung, keine Wiederholdungsgruppen)
-
 </small>
+
+(= Atomisierung, keine Wiederholungsgruppen)
+
 
 --
 ## Zweite Normalform
@@ -357,9 +337,9 @@ Typen: 1:1, 1:n, n:1, n:m
 | 55652008 | J.      | Smith  | 1744|1803|
 | 11223344 | J.-J.   |Rousseau| 1712|1778|
 
-(= Abhängigkeit der Attribute vom Primärschlüssel)
-
 </small>
+
+(= Abhängigkeit der Attribute vom Primärschlüssel)
 
 
 --
@@ -424,11 +404,14 @@ Typen: 1:1, 1:n, n:1, n:m
 
 | Verlags-ID | Name     | PLZ   | Ort       |
 |----------|------------|-------|-----------|
-| ABC123   | De Gruyter | 10785 | Berlin    |
-| CDE456   | Metzler    | 70182 | Stuttgart |
-| FGH789   | transcript | 33602 | Bielefeld |
+| 123   | De Gruyter | 10785 | Berlin    |
+| 456   | Metzler    | 70182 | Stuttgart |
+| 789   | transcript | 33602 | Bielefeld |
 
 </small>
+
+(Indirekte Abhängigkeit: PLZ bedingt Ort)
+
 
 
 --
@@ -438,9 +421,9 @@ Typen: 1:1, 1:n, n:1, n:m
 
 | Verlags-ID | Name     | PLZ   |
 |----------|------------|-------|
-| ABC123   | De Gruyter | 10785 |
-| CDE456   | Metzler    | 70182 |
-| FGH789   | transcript | 33602 |
+| 123   | De Gruyter | 10785 |
+| 456   | Metzler    | 70182 |
+| 789   | transcript | 33602 |
 
 <br/>
 
@@ -450,9 +433,9 @@ Typen: 1:1, 1:n, n:1, n:m
 | 70182 | Stuttgart |
 | 33602 | Bielefeld |
 
-(Indirekte Abhängigkeit aufeglöst)
-
 </small>
+
+(Indirekte Abhängigkeit aufgelöst)
 
 
 
@@ -616,9 +599,6 @@ WHERE GND=="98765"
 
 
 --
-## Fragen?
-
---
 ## Lektürehinweise
 <small>
 
@@ -635,17 +615,13 @@ WHERE GND=="98765"
 
 </small>
 
---
-## Nächste Sitzung
-<br/>
-* 27.11.: Thema: Datenmodellierung 3: Markup, XML, TEI
 
 ---
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>Christof Schöch, 2018
+<br/>Christof Schöch, 2020
 <br/>http://www.christof-schoech.de
 <br/>
 <hr/>
