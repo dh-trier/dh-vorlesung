@@ -57,8 +57,10 @@ body {
   font-size: 1.6em; }
 
 .reveal h3 {
-  font-size: 1.2em; }
-
+  font-size: 1.4em; 
+  margin: -40px 0 40px 0;
+  color: darkblue; }
+  
 .reveal h4 {
   font-size: 1em; }
 
