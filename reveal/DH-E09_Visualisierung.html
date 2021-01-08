@@ -98,7 +98,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 
 ---
-### Charts
+### Plot / chart
 <br/>
 >A chart is a display in which data are encoded with symbols that have different shapes, colors, or proportions. In many cases, these symbols are placed within a Cartesian coordinate system.<br/>(Cairo 2016, 28)
 
@@ -106,25 +106,27 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <br/><br/>Beispiel: <a href="img/E09/gapminder-bubbleplot.png">Life expectancy, GDP per capita and population size</a> (Gapminder)
 
 ---
-### Infographics
+### Infografik
 <br/>
 >An infographic is a multi-section visual representation of information intended to communicate one or more specific messages. Infographics are made of a mix of charts, maps, illustrations, and text (or sound) that provides explanations and context.<br/>(Alberto Cairo 2016, 31)
 
 <br/>Beispiel: <a href="img/E09/scmp-hunters_infographic.png">The hunter and the hunted</a> (SCMP)
 
 ---
-### Data visualisations
+### Datenvisualisierung
 <br/>
 >A data visualization is a display of data designed to enable analysis, exploration, and discovery. Data visualisations aren't intended mainly to convey messages that are predefined by their designers. Instead, they are often conceived as tools that let people extract their own conclusions from the data.<br/>(Alberto Cairo 2016, 31)
 
-<br/>Beispiel: United Nations Human Development Data,<br/>http://hdr.undp.org/en/data
+<br/>Beispiel: <a href="img/E09/hdindex.png">United Nations Human Development Data</a>, <br/>siehe auch: http://hdr.undp.org/en/data
+
 
 ---
 ### News application
 <br/>
 >A news application is a special kind of visualization that lets people relate the data being presented to their own lives. Its main goal is to be useful by being customizable according to each person's needs. <br/>(Alberto Cairo 2016, 31)
 
-<br/>Beispiel: Deutschland-Wahlkarte 2017,<br/>https://deutschlandwahlkarte2017.morgenpost.de/#de
+<br/><br/>Beispiel 1: <a href="https://deutschlandwahlkarte2017.morgenpost.de/#de">Deutschland-Wahlkarte 2017</a>
+<br/><br/>Beispiel 2: <a href="https://ig.ft.com/coronavirus-chart/?areas=usa&areas=gbr&areas=deu&areas=fra&areas=vnm&areasRegional=usny&areasRegional=usnj&areasRegional=usia&areasRegional=usca&areasRegional=usnd&areasRegional=ussd&cumulative=0&logScale=0&per100K=1&startDate=2020-09-01&values=deaths">Financial Times Corona-Tracker 2020-2021</a>
 
 
 --
@@ -150,9 +152,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 ---
 ### Herausforderungen der Visualisierung
 * Für welche Daten passt welche Visualisierungsform?  <!-- .element: class="fragment" data-fragment-index="1" -->
-* Wie stelle ich sicher, dass meine Visualisierung verstanden wird? <!-- .element: class="fragment" data-fragment-index="2" -->
-* Wie kann ich Unsicherheit visualisieren? <!-- .element: class="fragment" data-fragment-index="3" -->
-* Die "five qualities" von Alberto Cairo: truthful, functional, beautiful, insightful, enlightening  <!-- .element: class="fragment" data-fragment-index="4" -->
+* Wie stelle ich sicher, dass meine Visualisierung die Daten korrekt wiedergibt? <!-- .element: class="fragment" data-fragment-index="2" -->
+* Wie kann ich Unsicherheit / Wahrscheinlichkeit visualisieren? <!-- .element: class="fragment" data-fragment-index="3" -->
+* Wie stelle ich sicher, dass meine Visualisierung verstanden wird? <!-- .element: class="fragment" data-fragment-index="4" -->
+* Die "five qualities" von Alberto Cairo: truthful, functional, beautiful, insightful, enlightening  <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 ## (4) Ein-/Zweidimensionale Daten
@@ -164,7 +167,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 * Scatterplots
 
 ---
-### Pionier: Playfair (Barchart)
+### Pionier: Playfair 1786 (Barchart)
 <img height="500" data-src="img/E09/playfair-barchart.png">
 <br/><small>(Quelle: <a href="https://commons.wikimedia.org/wiki/File:Playfair_Barchart.gif">Wikimedia Commons</a>, public domain.)</small>
 
@@ -179,7 +182,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <br/><small>(Quelle: Schöch 2018)</small>
 
 ---
-### Pionier: Russell (Scatterplot)
+### Pionier: Russell 1914 (Scatterplot)
 <img height="500" data-src="img/E09/stars-scatterplot.png">
 <br/><small>Absolute magnitude against spectral class<br/>(Quelle: Spence and Garrison 1993)</small>
 
@@ -188,15 +191,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <a href="img/E09/worksbyzeta.svg"><img height="500" data-src="img/E09/worksbyzeta.png"></a>
 <br/><small>(Quelle: Schöch 2018, CC-BY)</small>
 
----
-### Semantische Dimensionen (Scatterplot)
-<a href="img/E09/word-embeddings_scatterplot.svg"><img height="500" data-src="img/E09/word-embeddings_scatterplot.png"></a>
-<br/><small>(Quelle: Schöch 2019, CC-BY)</small>
 
 ---
 ### 3D-Scatterplot
-<br/>
-* https://www.rpubs.com/RobertHesselbach/450624
+<a href="img/E09/hesselbach.png"><img height="500" data-src="img/E09/hesselbach.png"></a>
+<br/>Interaktive Fassung: https://www.rpubs.com/RobertHesselbach/450624
 
 
 --
@@ -215,9 +214,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <img height="500" data-src="img/E09/boxplot-density.png">
 <br/><small>(Quelle: Wikipedia, https://en.wikipedia.org/wiki/File:Boxplot_vs_PDF.svg, CC BY-SA 2.5)</small>
 
+
 ---
-### "wish" by gender (Boxplot)
-<img height="500" data-src="img/E09/wish-boxplot.svg">
+### Topic-Verteilung (Boxplot)
+<img height="400" data-src="img/E09/topic47-wordle-comparison.png">
 <br/><small>(Quelle: Schöch)</small>
 
 ---
@@ -243,29 +243,28 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 ---
 ## Chart-Typen
 <br/>
-* Linechart
+* Lineplot
 * Timeline
 
 ---
-### Pionier: Mendenhall (Linechart)
+### Pionier: Mendenhall 1898 (Lineplot)
 <img height="500" data-src="img/E09/mendenhall-lineplot.png">
-<br/><small>(Quelle: Mendenhall 1898 )</small>
+<br/><small>(Quelle: Mendenhall, "The Characteristic Curves of Composition, 1898 )</small>
 
 ---
-### Klassiker: IPPC-Klimareport (Linechart)
+### Klassiker: IPPC-Klimareport (Lineplot)
 <img height="500" data-src="img/E09/ipcc-climate-change-chart.jpg">
 <br/><small>(Quelle: https://www.decodedscience.org/wp-content/uploads/2011/11/ipcc-climate-change-chart.jpg, 2001)</small>
 
 ---
-### Topic-Entwicklung (Linechart)
+### Topic-Entwicklung (Lineplot)
 <img height="500" data-src="img/E09/topics-lineplot.png">
 <br/><small>(Quelle: Schöch, CC-BY)</small>
 
 ---
-### Bibliographische Daten (Timeline)
-<img height="500" data-src="img/E09/zotero-timeline.png">
-<br/><small>(Quelle: Schöch, CC-BY)</small>
-
+### Korpusanalyse Komponisten (Timeline)
+<a href="img/E09/weiss-cluster-timeline.png"><img height="500" data-src="img/E09/weiss-cluster-timeline.png"></a>
+<br/><small>(Quelle: Weiß et al., "Investigating style evolution of Western classical music: A computational approach", 2019.)</small>
 
 
 --
@@ -320,10 +319,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <img height="500" data-src="img/E09/pest-snowmap-1854.jpg">
 <br/><small>(Quelle: http://www.datavis.ca/gallery/images/snowmap_1854-large.jpg)</small>
 
----
-### Klassiker: Minard, Russlandfeldzug (Verlaufskarte)
-<img height="500" data-src="img/E09/russland-minard.png">
-<br/><small>(Quelle: https://en.wikipedia.org/wiki/File:Minard.png)</small>
 
 ---
 ### 2020 Presidential Election (anamorphote Karte)
@@ -336,20 +331,17 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <br/><small>(Quelle: http://www.mtr.com.hk/en/customer/services/system_map.html)</small>
 
 ---
-### Top-5000 Filme (Geobrowser)
+### Top-5000 Filme (Raum-Zeit-Visualisierung)
 <a href="https://geobrowser.de.dariah.eu/?kml1=https://geobrowser.de.dariah.eu/data/imdb/imdb_best5000.kml&currentStatus=mapChanged=Maps-for-Free+relief+map"><img height="500" data-src="img/E09/movies_geobrowser.png"></a>
-<br/><small>(Quelle: https://geobrowser.de.dariah.eu)</small>
+<br/><small>(Quelle: DARIAH-DE Geobrowser, https://geobrowser.de.dariah.eu)</small>
 
 --
 ## (9) Relationale Informationen: Netzwerke
 
 ---
-### Netzwerk: Pionier
+### Pionier: Bernfeld 1922
 <img height="500" data-src="img/E09/Bernfeld_1922.png">
 <br/><small>(Siegfried Bernfeld, Vom Gemeinschaftsleben der Jungend, 1922, <br/>Quelle: Jürgen Pfeffer, http://www.pfeffer.at/data/visposter/)</small>
-
-
-
 
 ---
 ### Figuren (Netzwerk)
@@ -366,10 +358,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <img height="500" data-src="img/E09/GraphSNF_disciplines.png">
 <br/><small>(Quelle: http://www.martingrandjean.ch/complex-network-visualisation-interdisciplinarity/)</small>
 
----
-### "Sinn" Wikipedia vs. Roman (Netzwerk)
-<img height="500" data-src="img/E09/sens_semantisches-netzwerk.png">
-<br/><small>(Quelle: Schöch 2019)</small>
 
 
 --
@@ -397,6 +385,16 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <img height="500" data-src="img/E09/mauch-styles.png">
 <br/><small>(Violin Plot mit Zeitachse und Clustering, <br/>Quelle: Mauch et al. 2015)</small>
 
+---
+### Bonusplot: Semantische Dimensionen
+<a href="img/E09/word-embeddings_scatterplot.svg"><img height="500" data-src="img/E09/word-embeddings_scatterplot.png"></a>
+<br/><small>(interaktiv; Quelle: Schöch 2019, CC-BY)</small>
+
+---
+### Klassiker: Minard, Russlandfeldzug (Verlaufskarte)
+<img height="500" data-src="img/E09/russland-minard.png">
+<br/><small>(Quelle: https://en.wikipedia.org/wiki/File:Minard.png)</small>
+s
 
 
 ---
@@ -409,8 +407,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 **Weitere Empfehlungen**
 * Alberto Cairo. _The Truthful Art. Data, Chars, and Maps for Communication_. Pearson, 2016.
-* Isabelle Meirelles. _Design for Information: An Introduction to the Histories, Theories, and Best Practices Behind Effective Information Visualizations_. Rockport, 2013. 
-* Peter Fischer-Stabel. _Datenvisualisierung. Vom Diagramm zur Virtual Reality. UTB, 2018. (Der Autor ist Professor in Trier.)
+* Isabelle Meirelles. *Design for Information: An Introduction to the Histories, Theories, and Best Practices Behind Effective Information Visualizations*. Rockport, 2013. 
+* Peter Fischer-Stabel. *Datenvisualisierung. Vom Diagramm zur Virtual Reality*. UTB, 2018. (Der Autor ist Professor in Trier.)
 * Michael Friendly, _Datavis.ca_, http://www.datavis.ca/ (York University, Toronto, Kanada.)
 
 </small>
